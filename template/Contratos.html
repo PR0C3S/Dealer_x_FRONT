@@ -62,9 +62,7 @@
                         <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Inventario</span></a>
                     </li>
 
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="Contratos.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Contratos</span></a>
-                    </li>
+                    <li data-username="Contratos" class="nav-item active"><a href="Contratos.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Contratos</span></a></li>
 
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                         <a href="Facturas.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Facturas</span></a>
@@ -74,7 +72,9 @@
                         <a href="Formulario.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
                     </li>
 
-                    <li data-username="Empleados" class="nav-item active"><a href="Empleado.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Empleados</span></a></li>
+                    <li data-username="Table bootstrap datatable footable" class="nav-item">
+                        <a href="Empleado.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Empleados</span></a>
+                    </li>
 
                     <li data-username="Table bootstrap datatable footable" class="nav-item">
                         <a href="Cliente.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Clientes</span></a>
@@ -105,11 +105,11 @@
                             <div class="row align-items-center">
                                 <div class="col-md-12">
                                     <div class="page-header-title">
-                                        <h3 class="m-b-10">Tabla de empleados</h3>
+                                        <h3 class="m-b-10">Tabla de Contratos</h3>
                                     </div>
                                     <ul class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                                        <li class="breadcrumb-item"><a href="#!">Empleados</a></li>
+                                        <li class="breadcrumb-item"><a href="#!">Contratos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Lista de empleados</h5>
+                                        <h5>Lista de Contratos</h5>
                                     </div>
                                     <div id="scrolling-table_filter" class="dataTables_filter">
                                         <input type="search" class="form-control form-control-sm" placeholder="Buscar empleado por nombre" aria-controls="scrolling-table">
@@ -134,50 +134,39 @@
                                             <thead>
                                             <tr>
                                                 <th>#ID</th>
-                                                <th>Nombre Completo</th>
-                                                <th>Cedula</th>
-                                                <th>Sexo</th>
-                                                <th>Correo</th>
-                                                <th>Celular</th>
-                                                <th>Tipo de empleado</th>
-                                                <th>Cuenta bancaria</th>
                                                 <th>Estado</th>
+                                                <th>Fecha</th>
+                                                <th>Tipo</th>
+                                                <th>Vehiculo</th>
+                                                
 
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td>John Peña</td>
-                                                <td>031-231313-2</td>
-                                                <td>Masculino</td>
-                                                <td>john@gmail.com</td>
-                                                <td>849-409-9312</td>
-                                                <td>Gerente</td>
-                                                <td>20223131</td>
                                                 <td>Activo</td>
+                                                <td>31/12/2020</td>
+                                                <td>Masculino</td>
+                                                <td>Hyundai Sonata 2017</td>
+
                                             </tr>
                                             <tr>
                                                 <th scope="row">2</th>
-                                                <td>Robert Dominguez</td>
-                                                <td>031-335253-2</td>
+                                                <td>Culminado</td>
+                                                <td>27/01/2020</td>
                                                 <td>Masculino</td>
-                                                <td>rob@gmail.com</td>
-                                                <td>849-232-3213</td>
-                                                <td>Secretaria</td>
-                                                <td>20223131</td>
-                                                <td>Activo</td>
+                                                <td>Hyundai Sonata 2018</td>
+
                                             </tr>
                                             <tr>
                                                 <th scope="row">3</th>
-                                                <td>Andres Estrella</td>
-                                                <td>021-335793-9</td>
+                                                <td>Activo</td>
+                                                <td>27/02/2021</td>
                                                 <td>Masculino</td>
-                                                <td>andres@gmail.com</td>
-                                                <td>829-312-4232</td>
-                                                <td>Vendedor</td>
-                                                <td>20223131</td>
-                                                <td>No activo</td>
+                                                <td>Hyundai Sonata 2019</td>
+
+
                                             </tr>
 
                                             </tbody>
@@ -188,13 +177,16 @@
                             </div>
 
                                 <!-- [ Hover-table ] end -->
-                            <button type="button" class="btn btn-primary" value="Input Button" onclick="nuevoEmpleado()"><i class="feather icon-user-plus"></i>Nuevo empleado</button>
-                            <button type="button" class="btn btn-warning"><i class="feather icon-user"></i>Editar empleado</button>
+                            <button type="button" class="btn btn-primary" value="Input Button" onclick="nuevoEmpleado()"><i class="feather icon-sidebar"></i>Nuevo</button>
+                            <button type="button" class="btn btn-warning"><i class="feather icon-sidebar"></i>Editar</button>
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                            <button type="button" class="btn btn-secondary">Ver</button>
+                            <button type="button" class="btn btn-dark">Descargar PDF</button>
 
                             <script>
                                 function nuevoEmpleado()
                                 {
-                                    location.href = "FormEmpleado.html";
+                                    location.href = "FormContrato.html";
                                 }
                             </script>
 
