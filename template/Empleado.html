@@ -41,7 +41,7 @@
     <nav class="pcoded-navbar">
         <div class="navbar-wrapper">
             <div class="navbar-brand header-logo">
-               <a href="index.html" class="b-brand">
+               <a href="Dashboard.html" class="b-brand">
                    <div class="b-bg">
                        <i class="feather icon-trending-up"></i>
                    </div>
@@ -55,7 +55,7 @@
                         <label>Navigation</label>
                     </li>
                     <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
-                        <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                        <a href="Dashboard.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                     </li>
 
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
@@ -104,7 +104,7 @@
                                         <h3 class="m-b-10">Tabla de empleados</h3>
                                     </div>
                                     <ul class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="Dashboard.html"><i class="feather icon-home"></i></a></li>
                                         <li class="breadcrumb-item"><a href="#!">Empleados</a></li>
                                     </ul>
                                 </div>
@@ -125,7 +125,7 @@
                                     </div>
 
                                     <div class="card-block">
-
+                                        <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
                                             <tr>
@@ -179,20 +179,173 @@
                                             </tbody>
 
                                         </table>
+                                            </div>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="feather icon-user"></i>Editar empleado</button>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="feather icon-user-plus"></i>Nuevo empleado</button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade bd-example-modal-lg" id="empleadoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-content">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <h5>Dato generales</h5>
+                                                            </div>
+                                                            <div class="card-body">
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="nombre">Nombre completo</label>
+                                                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="cedula">Cedula</label>
+                                                                        <input type="text" class="form-control" id="cedula" placeholder="Cedula de identidad">
+                                                                    </div>
+
+                                                                </div>
+
+
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="email">Correo electronico</label>
+                                                                        <input type="email" class="form-control" id="email" placeholder="Correo electronico">
+                                                                    </div>
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Cuenta">Cuenta bancaria</label>
+                                                                        <input type="email" class="form-control" id="Cuenta" placeholder="Cuenta bancaria">
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label class="form-label">Password</label>
+                                                                        <input type="password" class="form-control" name="validation-password" id="password" placeholder="Password">
+                                                                    </div>
+                                                                    <div class="form-group col-md-4 ">
+                                                                        <label class="form-label">Confirm password</label>
+                                                                        <input type="password" class="form-control" name="validation-password-confirmation" id="confpassword" placeholder="Confirm password">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label >Fecha Nacimiento</label>
+                                                                        <input type="date" name="bday" id="bday" max="3000-12-31"
+                                                                               min="1000-01-01" class="form-control">
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-4" >
+                                                                        <label for="Sexo">Sexo</label>
+                                                                        <select class="form-control" id="Sexo">
+                                                                            <option>Masculino</option>
+                                                                            <option>Femenino</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4" >
+                                                                        <label for="Tipo">Tipo de empleado</label>
+                                                                        <select class="form-control" id="Tipo">
+                                                                            <option>Gerente</option>
+                                                                            <option>Vendedor</option>
+                                                                            <option>Secretario</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-4" >
+                                                                        <label for="Estado">Estado</label>
+                                                                        <select class="form-control" id="Estado">
+                                                                            <option>Activo</option>
+                                                                            <option>No activo</option>
+                                                                        </select>
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                                <div class="form-row">
+
+                                                                    <div class="form-group col-md-4">
+                                                                        <label class="form-label">Celular</label>
+                                                                        <input type="text" class="form-control" name="validation-phone" id="cel"placeholder="Celular: (999) 999-9999">
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-4">
+                                                                        <label class="form-label">Telefono</label>
+                                                                        <input type="text" class="form-control" name="validation-phone" id="tel" placeholder="Telefono: (999) 999-9999">
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Provincia">Provincia</label>
+                                                                        <select id="Provincia" class="form-control">
+                                                                            <option selected="">Provincia</option>
+                                                                            <option>Large select</option>
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Municipio">Municipio</label>
+                                                                        <select id="Municipio" class="form-control">
+                                                                            <option selected="">Municipio</option>
+                                                                            <option>Large select</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Sector">Sector</label>
+                                                                        <input type="text" class="form-control" id="Sector">
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Calle">Calle</label>
+                                                                        <input type="text" class="form-control" id="Calle">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-row">
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Casa">Casa/Edificio</label>
+                                                                        <input type="text" class="form-control" id="Casa">
+                                                                    </div>
+                                                                    <div class="form-group col-md-4">
+                                                                        <label for="Apartamento">Apartamento</label>
+                                                                        <input type="text" class="form-control" id="Apartamento">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" id="save" class="btn btn-primary">Guardar</button>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                                <!-- [ Hover-table ] end -->
-                            <button type="button" class="btn btn-primary" value="Input Button" onclick="nuevoEmpleado()"><i class="feather icon-user-plus"></i>Nuevo empleado</button>
-                            <button type="button" class="btn btn-warning"><i class="feather icon-user"></i>Editar empleado</button>
-
-                            <script>
-                                function nuevoEmpleado()
-                                {
-                                    location.href = "FormEmpleado.html";
-                                }
-                            </script>
 
                             </div>
                             <!-- [ Main Content ] end -->
