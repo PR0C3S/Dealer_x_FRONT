@@ -158,128 +158,127 @@
                                             </tbody> -->
                                         </table>
 
-
-
+                                        <!-- Modal -->
                                         <div class="modal fade bd-example-modal-lg" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-content">
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5>Datos generales</h5>
-                                                            </div>
-                                                            <div class="card-body">
 
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="idCliente"></label>
-                                                                        <input type="hidden" class="form-control" id="idCliente" placeholder="ID">
-                                                                    </div>
+                                                        <div class="card-header">
+                                                            <h5>Datos generales</h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <!--<div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="idCliente"></label>
+                                                                    <input type="hidden" class="form-control" id="idCliente" placeholder="ID">
                                                                 </div>
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="nombre">Nombre completo</label>
-                                                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
-                                                                        <!-- <input type="hidden" class="form-control" id="id"> -->
-                                                                    </div>
-                                                                </div>
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="cedula">Cedula</label>
-                                                                        <input type="text" class="form-control" id="cedula" placeholder="Cedula de identidad">
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="email">Correo electronico</label>
-                                                                        <input type="text" class="form-control" id="email" placeholder="Correo electronico">
-                                                                    </div>
-                                                                </div>
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label >Fecha Nacimiento</label>
-                                                                        <input type="date" name="fecha_Nacimiento" id="fecha_Nacimiento" max="3000-12-31"
-                                                                               min="1000-01-01" class="form-control">
-                                                                    </div>
-                                        
-                                                                    <div class="form-group col-md-4" >
-                                                                        <label for="sexo">Sexo</label>
-                                                                        <select class="form-control" id="sexo">
-                                                                            <option>M</option>
-                                                                            <option>F</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                        
-                                                                <div class="form-row">
-                                        
-                                                                    <div class="form-group col-md-4">
-                                                                        <label class="form-label">Celular</label>
-                                                                        <input type="text" class="form-control" name="celular" id="celular"placeholder="Celular: (999) 999-9999">
-                                                                    </div>
-                                        
-                                                                    <div class="form-group col-md-4">
-                                                                        <label class="form-label">Telefono</label>
-                                                                        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono: (999) 999-9999">
-                                                                    </div>
-                                                                </div>
-                                        
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="Provincia">Provincia</label>
-                                                                        <select id="provincia" class="form-control">
-                                                                            <option selected="">Provincia</option>
-                                                                            <option>Large select</option>
-                                                                        </select>
-                                                                    </div>
-                                        
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="Municipio">Municipio</label>
-                                                                        <select id="municipio" class="form-control">
-                                                                            <option selected="">Municipio</option>
-                                                                            <option>Large select</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="Sector">Sector</label>
-                                                                        <input type="text" class="form-control" id="sector">
-                                                                    </div>
-                                        
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="Calle">Calle</label>
-                                                                        <input type="text" class="form-control" id="calle">
-                                                                    </div>
-                                                                </div>
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="Casa">Casa/Edificio</label>
-                                                                        <input type="text" class="form-control" id="casa">
-                                                                    </div>
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="Apartamento">Apartamento</label>
-                                                                        <input type="text" class="form-control" id="apartamento">
-                                                                    </div>
+                                                            </div>-->
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="nombre">Nombre completo</label>
+                                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+                                                                    <!-- <input type="hidden" class="form-control" id="id"> -->
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" id="save" class="btn btn-primary">Guardar</button>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="cedula">Cedula</label>
+                                                                    <input type="text" class="form-control" id="cedula" placeholder="Cedula de identidad">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="email">Correo electronico</label>
+                                                                    <input type="text" class="form-control" id="email" placeholder="Correo electronico">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label >Fecha Nacimiento</label>
+                                                                    <input type="date" name="fecha_Nacimiento" id="fecha_Nacimiento" max="3000-12-31"
+                                                                           min="1000-01-01" class="form-control">
+                                                                </div>
+
+                                                                <div class="form-group col-md-4" >
+                                                                    <label for="sexo">Sexo</label>
+                                                                    <select class="form-control" id="sexo">
+                                                                        <option>M</option>
+                                                                        <option>F</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label class="form-label">Celular</label>
+                                                                    <input type="text" class="form-control" name="celular" id="celular"placeholder="Celular: (999) 999-9999">
+                                                                </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label class="form-label">Telefono</label>
+                                                                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono: (999) 999-9999">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Provincia">Provincia</label>
+                                                                    <select id="provincia" class="form-control">
+                                                                        <option selected="">Provincia</option>
+                                                                        <option>Large select</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Municipio">Municipio</label>
+                                                                    <select id="municipio" class="form-control">
+                                                                        <option selected="">Municipio</option>
+                                                                        <option>Large select</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Sector">Sector</label>
+                                                                    <input type="text" class="form-control" id="sector">
+                                                                </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Calle">Calle</label>
+                                                                    <input type="text" class="form-control" id="calle">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Casa">Casa/Edificio</label>
+                                                                    <input type="text" class="form-control" id="casa">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Apartamento">Apartamento</label>
+                                                                    <input type="text" class="form-control" id="apartamento">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" id="save" class="btn btn-primary">Guardar</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end of modal -->
+
+
                                         
-                                    </div>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
 
