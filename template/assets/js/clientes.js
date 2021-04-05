@@ -4,11 +4,10 @@ var app = {
     init: function(){
         app.initDataTable('#tablaPrincipal')
 
-        $("#save").click(function(){
-            if($('#id_Cliente').val() === ''){
-                //console.log($('#id_Cliente').val());
-                app.save({
-                    /* id : $('#id_Cliente').val(), */
+        $("#save").click(function(){ //click en el boton de guardar en el modal
+             if($('#id_Cliente').val() === ''){ //si el input escondido de id esta vacio
+                app.save({ //funcion que llama al save del api
+                    id_Cliente : $('#id_Cliente').val(), 
                     nombreCompleto: $('#nombreCompleto').val(),
                     cedula: $('#cedula').val(),
                     email: $('#email').val(),
@@ -17,9 +16,10 @@ var app = {
                     celular: $('#celular').val(),
                     telefono: $('#telefono').val()
                 });
-            } else {
-                app.edit($('id_Cliente').val()*1,
+             } else { //funcion que llama al edit del api
+                app.edit($('#id_Cliente').val(),
                 {
+                    id_Cliente : $('#id_Cliente').val(), 
                     nombreCompleto: $('#nombreCompleto').val(),
                     cedula: $('#cedula').val(),
                     email: $('#email').val(),
@@ -28,10 +28,10 @@ var app = {
                     celular: $('#celular').val(),
                     telefono: $('#telefono').val()
                 });
-            }
+            } 
         });
     },
-    initDataTable : function(id){
+    initDataTable : function(id){ //funcion que llena la tabla de data con el get del api
         app.table = $(id).DataTable({
             ajax : {
                 url : app.backend + '/',
@@ -50,7 +50,6 @@ var app = {
                 {data : "celular"},
                 {data : "telefono"},
                 //{data : "fecha_Nacimiento"}
-
                 //{data : "ubicacion"},
                 //{data : "contratos"}
             ],
@@ -110,7 +109,7 @@ var app = {
         $('#casa').val(data.Casa);
         $('#apartamento').val(data.Apartamento); */
     },
-    cleanForm: function(){
+    cleanForm: function(){ //vacia la data de la modal
         $('#id_Cliente').val('');
         $('#nombreCompleto').val('');
         $('#cedula').val('');
@@ -130,7 +129,7 @@ var app = {
         $('#apartamento').val(''); */
     },
 
-    save : function(data){
+    save : function(data){ //api call save
         $.ajax({
             url: app.backend + '/save',
             data : JSON.stringify(data),
@@ -149,7 +148,7 @@ var app = {
             }
         })
     },
-    delete : function(id){
+    delete : function(id){ //api call delete
         $.ajax({
             url: app.backend + '/delete' + '?ID=' + id,
             
@@ -167,9 +166,9 @@ var app = {
             }
         })
     },
-    edit : function(id,data){
+    edit : function(id,data){ //api call edit
         $.ajax({
-            url: app.backend + '/edit' + '?ID=' + id,
+            url: app.backend + '/edit' /* + '?ID=' + id */,
             data : JSON.stringify(data),
             
             method: 'PUT',
