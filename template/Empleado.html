@@ -3,13 +3,6 @@
 
 <head>
 
-    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 10]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,357 +18,355 @@
     <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css'>
+
 
 </head>
 
 <body>
-    <!-- [ Pre-loader ] start -->
-    <div class="loader-bg">
-        <div class="loader-track">
-            <div class="loader-fill"></div>
-        </div>
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+    <div class="loader-track">
+        <div class="loader-fill"></div>
     </div>
-    <!-- [ Pre-loader ] End -->
+</div>
+<!-- [ Pre-loader ] End -->
 
-    <!-- [ navigation menu ] start -->
-    <nav class="pcoded-navbar">
-        <div class="navbar-wrapper">
-            <div class="navbar-brand header-logo">
-               <a href="Dashboard.html" class="b-brand">
-                   <div class="b-bg">
-                       <i class="feather icon-trending-up"></i>
-                   </div>
-                   <span class="b-title">Dealer x</span>
-               </a>
-               <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
-           </div>
-
-            <div class="navbar-content scroll-div">
-                <ul class="nav pcoded-inner-navbar">
-                    <li class="nav-item pcoded-menu-caption">
-                        <label>Navigation</label>
-                    </li>
-                    <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
-                        <a href="Dashboard.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
-                    </li>
-
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Inventario</span></a>
-                    </li>
-
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="Formulario.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
-                    </li>
-
-                    <li data-username="Table bootstrap datatable footable" class="nav-item">
-                        <a href="Contratos.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Contratos</span></a>
-                    </li>
-
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="Facturas.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Facturas</span></a>
-                    </li>
-
-                    <li data-username="Empleados" class="nav-item active"><a href="Empleado.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Empleados</span></a></li>
-
-                    <li data-username="Table bootstrap datatable footable" class="nav-item">
-                        <a href="Cliente.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Clientes</span></a>
-                    </li>
-
-                    <li data-username="Table bootstrap datatable footable" class="nav-item">
-                        <a href="auth-signin.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Log out</span></a>
-                    </li>
-
-                </ul>
-            </div>
-
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="index.html" class="b-brand">
+                <div class="b-bg">
+                    <i class="feather icon-trending-up"></i>
+                </div>
+                <span class="b-title">Dealer x</span>
+            </a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
         </div>
-    </nav>
-    <!-- [ navigation menu ] end -->
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Navigation</label>
+                </li>
+                <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
+                    <a href="Dashboard.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                </li>
+
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Inventario</span></a>
+                </li>
+
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="Formulario.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
+                </li>
+
+                <li data-username="Table bootstrap datatable footable" class="nav-item">
+                    <a href="Contratos.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Contratos</span></a>
+                </li>
+
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                    <a href="Facturas.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Facturas</span></a>
+                </li>
+
+                <li data-username="Empleado" class="nav-item active"><a href="Empleado.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Empleados</span></a></li>
+
+                <li data-username="Table bootstrap datatable footable" class="nav-item">
+                    <a href="Cliente.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Clientes</span></a>
+                </li>
 
 
-    <!-- [ Header ] end -->
+                <li data-username="Table bootstrap datatable footable" class="nav-item">
+                    <a href="auth-signin.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Log out</span></a>
+                </li>
 
-    <!-- [ Main Content ] start -->
-    <!-- [ Main Content ] start -->
-    <section class="pcoded-main-container">
-        <div class="pcoded-wrapper">
-            <div class="pcoded-content">
-                <div class="pcoded-inner-content">
-                    <!-- [ breadcrumb ] start -->
-                    <div class="page-header">
-                        <div class="page-block">
-                            <div class="row align-items-center">
-                                <div class="col-md-12">
-                                    <div class="page-header-title">
-                                        <h3 class="m-b-10">Tabla de empleados</h3>
-                                    </div>
-                                    <ul class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="Dashboard.html"><i class="feather icon-home"></i></a></li>
-                                        <li class="breadcrumb-item"><a href="#!">Empleados</a></li>
-                                    </ul>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!-- [ navigation menu ] end -->
+
+<!-- [ Header ] start -->
+
+<!-- [ Header ] end -->
+
+<!-- [ Main Content ] start -->
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+                <div class="page-header">
+                    <div class="page-block">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <div class="page-header-title">
+                                    <h3 class="m-b-10">Tabla de Empleados</h3>
                                 </div>
+
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="#!">Empleados</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- [ breadcrumb ] end -->
-                    <div class="main-body">
-                        <div class="page-wrapper">
-                            <!-- [ Main Content ] start -->
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Lista de empleados</h5>
-                                    </div>
-                                    <div id="scrolling-table_filter" class="dataTables_filter">
-                                        <input type="search" class="form-control form-control-sm" placeholder="Buscar empleado por nombre" aria-controls="scrolling-table">
-                                    </div>
+                </div>
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
 
-                                    <div class="card-block">
-                                        <div class="table-responsive">
-                                        <table class="table table-hover" id="empleado">
+                        <!-- [ Main Content ] start -->
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Lista de empleados</h5>
+                                </div>
+                                <div id="scrolling-table_filter" class="dataTables_filter">
+                                    <input type="search" class="form-control form-control-sm" placeholder="Buscar empleado por nombre" aria-controls="scrolling-table">
+                                </div>
+                                <div class="alert alert-primary" id="msg" style="display: none;" role="alert">
+
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="table-responsive">
+                                        <table id="tablaPrincipal" class="table table-hover">
                                             <thead>
                                             <tr>
                                                 <th>#ID</th>
                                                 <th>Nombre Completo</th>
                                                 <th>Cedula</th>
-                                                <th>Sexo</th>
                                                 <th>Correo</th>
+                                                <th>Fecha Nacimiento</th>
+                                                <th>Sexo</th>
                                                 <th>Celular</th>
-                                                <th>Tipo de empleado</th>
-                                                <th>Cuenta bancaria</th>
+                                                <th>Telefono</th>
+                                                <th>contraseña</th>
+                                                <!--                                                <th>Confirmar contraseña</th>-->
+                                                <th>Tipo</th>
+                                                <!--<th>Cuenta bancaria</th>-->
                                                 <th>Estado</th>
 
                                             </tr>
                                             </thead>
-
+                                            <!--                                        <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>John Peña</td>
+                                                                                            <td>031-231313-2</td>
+                                                                                            <td>Masculino</td>
+                                                                                            <td>john@gmail.com</td>
+                                                                                            <td>849-409-9312</td>
+                                                                                            <td>null</td>
+                                                                                        </tr>
+                                                                                        </tbody> -->
                                         </table>
-                                            </div>
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="feather icon-user"></i>Editar empleado</button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="feather icon-user-plus"></i>Nuevo empleado</button>
 
-                                        <!-- Modal -->
-                                        <div class="modal fade bd-example-modal-lg" id="empleadoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade bd-example-modal-lg" id="empleadoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
                                                 <div class="modal-content">
-                                                    <div class="modal-content">
 
-                                                        <div class="card-header">
-                                                            <h5>Datos generales</h5>
-                                                        </div>
-                                                        <div class="card-body">
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="nombre">Nombre completo</label>
-                                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="cedula">Cedula</label>
-                                                                    <input type="text" class="form-control" id="cedula" placeholder="Cedula de identidad">
-                                                                </div>
-
-                                                            </div>
-
-
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="email">Correo electronico</label>
-                                                                    <input type="email" class="form-control" id="email" placeholder="Correo electronico">
-                                                                </div>
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Cuenta">Cuenta bancaria</label>
-                                                                    <input type="email" class="form-control" id="Cuenta" placeholder="Cuenta bancaria">
-                                                                </div>
-                                                            </div>
-
-
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label class="form-label">Password</label>
-                                                                    <input type="password" class="form-control" name="validation-password" id="password" placeholder="Password">
-                                                                </div>
-                                                                <div class="form-group col-md-4 ">
-                                                                    <label class="form-label">Confirm password</label>
-                                                                    <input type="password" class="form-control" name="validation-password-confirmation" id="confpassword" placeholder="Confirm password">
-                                                                </div>
-                                                            </div>
-
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label >Fecha Nacimiento</label>
-                                                                    <input type="date" name="bday" id="bday" max="3000-12-31"
-                                                                           min="1000-01-01" class="form-control">
-                                                                </div>
-
-                                                                <div class="form-group col-md-4" >
-                                                                    <label for="Sexo">Sexo</label>
-                                                                    <select class="form-control" id="Sexo">
-                                                                        <option>Masculino</option>
-                                                                        <option>Femenino</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4" >
-                                                                    <label for="Tipo">Tipo de empleado</label>
-                                                                    <select class="form-control" id="Tipo">
-                                                                        <option>Gerente</option>
-                                                                        <option>Vendedor</option>
-                                                                        <option>Secretario</option>
-                                                                    </select>
-                                                                </div>
-
-                                                                <div class="form-group col-md-4" >
-                                                                    <label for="Estado">Estado</label>
-                                                                    <select class="form-control" id="Estado">
-                                                                        <option>Activo</option>
-                                                                        <option>No activo</option>
-                                                                    </select>
-                                                                </div>
-
-
-                                                            </div>
-
-                                                            <div class="form-row">
-
-                                                                <div class="form-group col-md-4">
-                                                                    <label class="form-label">Celular</label>
-                                                                    <input type="text" class="form-control" name="validation-phone" id="cel"placeholder="Celular: (999) 999-9999">
-                                                                </div>
-
-                                                                <div class="form-group col-md-4">
-                                                                    <label class="form-label">Telefono</label>
-                                                                    <input type="text" class="form-control" name="validation-phone" id="tel" placeholder="Telefono: (999) 999-9999">
-                                                                </div>
-                                                            </div>
-
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Provincia">Provincia</label>
-                                                                    <select id="Provincia" class="form-control">
-                                                                        <option selected="">Provincia</option>
-                                                                        <option>Large select</option>
-                                                                    </select>
-                                                                </div>
-
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Municipio">Municipio</label>
-                                                                    <select id="Municipio" class="form-control">
-                                                                        <option selected="">Municipio</option>
-                                                                        <option>Large select</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Sector">Sector</label>
-                                                                    <input type="text" class="form-control" id="Sector">
-                                                                </div>
-
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Calle">Calle</label>
-                                                                    <input type="text" class="form-control" id="Calle">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Casa">Casa/Edificio</label>
-                                                                    <input type="text" class="form-control" id="Casa">
-                                                                </div>
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="Apartamento">Apartamento</label>
-                                                                    <input type="text" class="form-control" id="Apartamento">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                    <div class="card-header">
+                                                        <h5>Datos generales</h5>
                                                     </div>
+                                                    <div class="card-body">
+                                                        <!--<div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="idCliente"></label>
+                                                                <input type="hidden" class="form-control" id="idCliente" placeholder="ID">
+                                                            </div>
+                                                        </div>-->
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Nombre">Nombre completo</label>
+                                                                <input type="text" class="form-control" id="Nombre" placeholder="Nombre completo">
+                                                            </div>
+                                                        </div>
 
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="button" id="save" class="btn btn-primary">Guardar</button>
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Cedula">Cedula</label>
+                                                                <input type="text" class="form-control" id="Cedula" placeholder="Cedula de identidad">
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Correo">Correo electronico</label>
+                                                                <input type="email" class="form-control" id="Correo" placeholder="Correo electronico">
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Cuenta">Cuenta bancaria</label>
+                                                                <input type="email" class="form-control" id="Cuenta" placeholder="Cuenta bancaria">
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label class="form-label">Password</label>
+                                                                <input type="password" class="form-control" name="validation-password" id="Contrasena" placeholder="Password">
+                                                            </div>
+                                                            <div class="form-group col-md-4 ">
+                                                                <label class="form-label">Confirm password</label>
+                                                                <input type="password" class="form-control" name="validation-password-confirmation" id="ConfContrasena" placeholder="Confirm password">
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label >Fecha Nacimiento</label>
+                                                                <input type="date" name="FechaNacimiento" id="FechaNacimiento" max="3000-12-31"
+                                                                       min="1000-01-01" class="form-control">
+                                                            </div>
+
+                                                            <div class="form-group col-md-4" >
+                                                                <label for="Sexo">Sexo</label>
+                                                                <select class="form-control" id="Sexo">
+                                                                    <option>M</option>
+                                                                    <option>F</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4" >
+                                                                <label for="Tipo">Tipo de empleado</label>
+                                                                <select class="form-control" id="Tipo">
+                                                                    <option>Gerente</option>
+                                                                    <option>Vendedor</option>
+                                                                    <option>Secretario</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group col-md-4" >
+                                                                <label for="Estado">Estado</label>
+                                                                <select class="form-control" id="Estado">
+                                                                    <option>Activado</option>
+                                                                    <option>Desahabilitado</option>
+                                                                </select>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                        <div class="form-row">
+
+                                                            <div class="form-group col-md-4">
+                                                                <label class="form-label">Celular</label>
+                                                                <input type="text" class="form-control" name="validation-phone" id="Celular"placeholder="Celular: (999) 999-9999">
+                                                            </div>
+
+                                                            <div class="form-group col-md-4">
+                                                                <label class="form-label">Telefono</label>
+                                                                <input type="text" class="form-control" name="validation-phone" id="Telefono" placeholder="Telefono: (999) 999-9999">
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Provincia">Provincia</label>
+                                                                <select id="Provincia" class="form-control">
+                                                                    <option selected="">Provincia</option>
+                                                                    <option>Large select</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Municipio">Municipio</label>
+                                                                <select id="Municipio" class="form-control">
+                                                                    <option selected="">Municipio</option>
+                                                                    <option>Large select</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Sector">Sector</label>
+                                                                <input type="text" class="form-control" id="Sector">
+                                                            </div>
+
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Calle">Calle</label>
+                                                                <input type="text" class="form-control" id="Calle">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-row">
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Casa">Casa/Edificio</label>
+                                                                <input type="text" class="form-control" id="Casa">
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="Apartamento">Apartamento</label>
+                                                                <input type="text" class="form-control" id="Apartamento">
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" id="save" class="btn btn-primary">Guardar</button>
+                                                </div>
                                             </div>
+
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            </div>
-                            <!-- [ Main Content ] end -->
+                            <!-- [ Hover-table ] end -->
+
                         </div>
+                        <!-- [ Main Content ] end -->
                     </div>
-
                 </div>
-            </div>
 
+            </div>
         </div>
 
-    </section>
-    <!-- [ Main Content ] end -->
+    </div>
 
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 11]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade
-               <br/>to any of the following web browsers to access this website.
-            </p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="assets/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="assets/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="assets/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="assets/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="assets/images/browser/ie.png" alt="">
-                            <div>IE (11 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
-        </div>
-    <![endif]-->
-    <!-- Warning Section Ends -->
+</section>
+<!-- [ Header ] end -->
 
-    <!-- Required Js -->
+
+<!-- [ Main Content ] end -->
+
+<!-- Required Js -->
+
 <script src="assets/js/vendor-all.min.js"></script>
-	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
-    <script src='Empleado.js'></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/pcoded.min.js"></script>
+<!--     <script src="template/assets/plugins/jquery/js/jquery.min.js"></script>
+    <script src="template/assets/plugins/jquery-ui/js/jquery-ui.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script> -->
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/js/empleados.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 </body>
 </html>
