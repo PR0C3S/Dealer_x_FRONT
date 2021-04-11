@@ -52,11 +52,15 @@
                         <label>Navigation</label>
                     </li>
                     <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project" class="nav-item">
-                        <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                        <a href="Dashboard.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                     </li>
 
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                         <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Inventario</span></a>
+                    </li>
+
+                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                        <a href="Formulario.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
                     </li>
 
                     <li data-username="Table bootstrap datatable footable" class="nav-item">
@@ -66,23 +70,20 @@
                     <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                         <a href="Facturas.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Facturas</span></a>
                     </li>
-                    
-                    <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
-                        <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
-                    </li>
 
                     <li data-username="Table bootstrap datatable footable" class="nav-item">
                         <a href="Empleado.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Empleados</span></a>
                     </li>
 
                     <li data-username="Cliente" class="nav-item active"><a href="Cliente.html" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Clientes</span></a></li>
+
                     <li data-username="Table bootstrap datatable footable" class="nav-item">
                         <a href="auth-signin.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Log out</span></a>
                     </li>
 
-
                 </ul>
             </div>
+
         </div>
     </nav>
     <!-- [ navigation menu ] end -->
@@ -157,15 +158,29 @@
                                             </tbody> -->
                                         </table>
 
+                                        <!-- Modal -->
                                         <div class="modal fade bd-example-modal-lg" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-content">
-                                                        <div class="card">
-                                                            <div class="card-header">
-                                                                <h5>Dato generales</h5>
+
+                                                        <div class="card-header">
+                                                            <h5>Datos generales</h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <!--<div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="idCliente"></label>
+                                                                    <input type="hidden" class="form-control" id="idCliente" placeholder="ID">
+                                                                </div>
+                                                            </div>-->
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="nombre">Nombre completo</label>
+                                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+                                                                    <!-- <input type="hidden" class="form-control" id="id"> -->
+                                                                </div>
                                                             </div>
-                                                            <div class="card-body">
 
                                                                 <div class="form-row">
                                                                     <div class="form-group col-md-4">
@@ -183,48 +198,34 @@
                                                                         <input type="text" class="form-control" id="nombreCompleto" placeholder="Nombre completo">
                                                                     </div>
                                                                 </div>
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="cedula">Cedula</label>
-                                                                        <input type="text" class="form-control" id="cedula" placeholder="Cedula de identidad">
-                                                                    </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label >Fecha Nacimiento</label>
+                                                                    <input type="date" name="fecha_Nacimiento" id="fecha_Nacimiento" max="3000-12-31"
+                                                                           min="1000-01-01" class="form-control">
                                                                 </div>
-                                                                
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label for="email">Correo electronico</label>
-                                                                        <input type="text" class="form-control" id="email" placeholder="Correo electronico">
-                                                                    </div>
+
+                                                                <div class="form-group col-md-4" >
+                                                                    <label for="sexo">Sexo</label>
+                                                                    <select class="form-control" id="sexo">
+                                                                        <option>M</option>
+                                                                        <option>F</option>
+                                                                    </select>
                                                                 </div>
-                                        
-                                                                <div class="form-row">
-                                                                    <div class="form-group col-md-4">
-                                                                        <label >Fecha Nacimiento</label>
-                                                                        <input type="date" name="fecha_Nacimiento" id="fecha_Nacimiento" max="3000-12-31"
-                                                                               min="1000-01-01" class="form-control">
-                                                                    </div>
-                                        
-                                                                    <div class="form-group col-md-4" >
-                                                                        <label for="sexo">Sexo</label>
-                                                                        <select class="form-control" id="sexo">
-                                                                            <option>M</option>
-                                                                            <option>F</option>
-                                                                        </select>
-                                                                    </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label class="form-label">Celular</label>
+                                                                    <input type="text" class="form-control" name="celular" id="celular"placeholder="Celular: (999) 999-9999">
                                                                 </div>
-                                        
-                                                                <div class="form-row">
-                                        
-                                                                    <div class="form-group col-md-4">
-                                                                        <label class="form-label">Celular</label>
-                                                                        <input type="text" class="form-control" name="celular" id="celular"placeholder="Celular: (999) 999-9999">
-                                                                    </div>
-                                        
-                                                                    <div class="form-group col-md-4">
-                                                                        <label class="form-label">Telefono</label>
-                                                                        <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono: (999) 999-9999">
-                                                                    </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label class="form-label">Telefono</label>
+                                                                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono: (999) 999-9999">
                                                                 </div>
                                         
                                         
@@ -269,18 +270,36 @@
                                                                         <input type="text" class="form-control" id="apartamento">
                                                                     </div> -->
                                                                 </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Calle">Calle</label>
+                                                                    <input type="text" class="form-control" id="calle">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Casa">Casa/Edificio</label>
+                                                                    <input type="text" class="form-control" id="casa">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="Apartamento">Apartamento</label>
+                                                                    <input type="text" class="form-control" id="apartamento">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" id="save" class="btn btn-primary">Guardar</button>
-                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" id="save" class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- end of modal -->
+
+
                                         
-                                    </div>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
 
