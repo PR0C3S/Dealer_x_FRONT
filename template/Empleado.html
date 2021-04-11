@@ -3,13 +3,6 @@
 
 <head>
 
-    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 10]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,6 +18,9 @@
     <link rel="stylesheet" href="assets/plugins/animation/css/animate.min.css">
     <!-- vendor css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css'>
 
 </head>
 
@@ -96,7 +92,6 @@
     <!-- [ Header ] end -->
 
     <!-- [ Main Content ] start -->
-    <!-- [ Main Content ] start -->
     <section class="pcoded-main-container">
         <div class="pcoded-wrapper">
             <div class="pcoded-content">
@@ -126,13 +121,14 @@
                                     <div class="card-header">
                                         <h5>Lista de empleados</h5>
                                     </div>
-                                    <div id="scrolling-table_filter" class="dataTables_filter">
+                                    <!-- <div id="scrolling-table_filter" class="dataTables_filter">
                                         <input type="search" class="form-control form-control-sm" placeholder="Buscar empleado por nombre" aria-controls="scrolling-table">
-                                    </div>
+                                    </div> -->
+
+                                    <div class="alert alert-primary" id="msg" style="display: none;" role="alert"></div>
 
                                     <div class="card-block">
-                                        <div class="table-responsive">
-                                        <table class="table table-hover" id="empleado">
+                                        <table id="tablaPrincipal" class="table table-hover">
                                             <thead>
                                             <tr>
                                                 <th>#ID</th>
@@ -144,15 +140,9 @@
                                                 <th>Tipo de empleado</th>
                                                 <th>Cuenta bancaria</th>
                                                 <th>Estado</th>
-
                                             </tr>
                                             </thead>
 
-                                        </table>
-                                            </div>
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="feather icon-user"></i>Editar empleado</button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="feather icon-user-plus"></i>Nuevo empleado</button>
 
                                         <!-- Modal -->
                                         <div class="modal fade bd-example-modal-lg" id="empleadoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -317,6 +307,9 @@
                                 </div>
                             </div>
 
+                                <!-- [ Hover-table ] end -->
+
+
                             </div>
                             <!-- [ Main Content ] end -->
                         </div>
@@ -328,60 +321,18 @@
         </div>
 
     </section>
-    <!-- [ Main Content ] end -->
-
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 11]>
-        <div class="ie-warning">
-            <h1>Warning!!</h1>
-            <p>You are using an outdated version of Internet Explorer, please upgrade
-               <br/>to any of the following web browsers to access this website.
-            </p>
-            <div class="iew-container">
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="assets/images/browser/chrome.png" alt="Chrome">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="assets/images/browser/firefox.png" alt="Firefox">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="assets/images/browser/opera.png" alt="Opera">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="assets/images/browser/safari.png" alt="Safari">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="assets/images/browser/ie.png" alt="">
-                            <div>IE (11 & above)</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>Sorry for the inconvenience!</p>
-        </div>
-    <![endif]-->
-    <!-- Warning Section Ends -->
 
     <!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/js/vendor-all.min.js"></script>
 	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/pcoded.min.js"></script>
     <script src='Empleado.js'></script>
+
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/clientes.js"></script>
+
 
 </body>
 </html>
