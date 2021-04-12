@@ -24,7 +24,7 @@ var app = {
 
         $('#provincia').on('focus change', function(){
             $('#municipio').empty();
-            $('#sectore').empty();
+            $('#sector').empty();
             var nombreProvincia = $("#provincia").val();
 
             $.ajax({
@@ -89,7 +89,7 @@ var app = {
                 app.save( //funcion que llama al save del api
                     data
                 );
-             } else { //funcion que llama al edit del api
+            }else{ //funcion que llama al edit del api
                 var clienteEdit={
                     id_Cliente: $('#id_Cliente').val(), 
                     nombreCompleto: $('#nombreCompleto').val(),
@@ -246,8 +246,7 @@ var app = {
         })
     },
     edit : function(data){ //api call edit
-        console.log(data);
-        console.log(data.cliente.id_Cliente);
+        
         $.ajax({
             url: app.backend + '/clientes/edit' /* + '?ID=' + id */,
             data : JSON.stringify({cliente:data.cliente, ubicacion: data.ubicacion, sector: data.nombreSector}),

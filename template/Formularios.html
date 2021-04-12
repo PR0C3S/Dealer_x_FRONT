@@ -55,11 +55,11 @@
                     <a href="Dashboard.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                 </li>
 
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item active">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="Inventario.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Inventario</span></a>
                 </li>
 
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item active">
                     <a href="Formularios.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
                 </li>
 
@@ -122,62 +122,44 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Inventario</h5>
+                                    <h5>Formularios</h5>
                                 </div>
-<!--                                <div id="scrolling-table_filter" class="dataTables_filter">-->
-<!--                                    <input type="search" class="form-control form-control-sm" placeholder="Buscar cliente por nombre" aria-controls="scrolling-table">-->
-<!--                                </div>-->
+                                <!--                                <div id="scrolling-table_filter" class="dataTables_filter">-->
+                                <!--                                    <input type="search" class="form-control form-control-sm" placeholder="Buscar cliente por nombre" aria-controls="scrolling-table">-->
+                                <!--                                </div>-->
                                 <div class="alert alert-primary" id="msg" style="display: none;" role="alert">
 
                                 </div>
 
                                 <div class="card-block">
                                     <div class="table-responsive">
-                                    <table id="tablaPrincipal" class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>#ID</th>
-                                            <th>Marca</th>
-                                            <th>Modelo</th>
-                                            <th>Version</th>
-                                            <th>Tipo</th>
-                                            <th>Año</th>
-                                            <th>Estado</th>
-                                            <th>Fecha</th>
-                                            <th>Condicion</th>
-                                            <th>Kilometraje</th>
-                                            <th>Transmisión</th>
-                                            <th>Traccion</th>
-                                            <th>Combustible</th>
+                                        <table id="tablaPrincipal" class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>#ID</th>
+                                                <th>Nombre</th>
+                                                <th>Correo</th>
+                                                <th>Celular</th>
+                                                <th>Fecha</th>
+                                                <th>Tipo</th>
 
-                                        </tr>
-                                        </thead>
-                                        
-                                    </table>
+                                            </tr>
+                                            </thead>
+
+                                        </table>
                                     </div>
 
 
 
-                                    <div class="modal fade bd-example-modal-lg" id="vehiculoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade bd-example-modal-lg" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-content">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <h5>Datos generales del vehiculo</h5>
+                                                            <h5>Formulario</h5>
                                                         </div>
                                                         <div class="card-body">
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="id_Vehiculo"></label>
-                                                                    <input type="hidden" class="form-control" id="id_Vehiculo" placeholder="ID">
-                                                                </div>
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="id_Version"></label>
-                                                                    <input type="hidden" class="form-control" id="id_Version" placeholder="ID">
-                                                                </div>
-                                                            </div>
 
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
@@ -186,7 +168,7 @@
                                                                         <option selected="">Marca</option>
                                                                     </select>
                                                                 </div>
-
+                                                                =
                                                                 <div class="form-group col-md-5">
                                                                     <label for="modelo">Modelo</label>
                                                                     <select id="modelo" class="form-control">
@@ -222,8 +204,8 @@
                                                                     <label for="condicion">Condición</label>
                                                                     <select class="form-control" id="condicion">
                                                                         <option selected="">Condición</option>
-                                                                        <option>NUEVO</option>
-                                                                        <option>USADO</option>
+                                                                        <option>Nuevo</option>
+                                                                        <option>Usado</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -276,37 +258,24 @@
                                                                     <label for="transmision">Tipo de transmisión</label>
                                                                     <select class="form-control" id="transmision">
                                                                         <option selected="">Transmisión</option>
-                                                                        <option>MANUAL</option>
-                                                                        <option>AUTOMATIZADAS_SECUENCIAL</option>
+                                                                        <option>Manual</option>
                                                                         <option>CVT</option>
-                                                                        <option>AUTOMATIZADA_DOBLE</option>
+                                                                        <option>Automatizadas-Secuenciales</option>
+                                                                        <option>Automatizada de Doble Embrague</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group col-md-5" >
                                                                     <label for="combustible">Tipo de combustible</label>
                                                                     <select class="form-control" id="combustible">
                                                                         <option selected="">Combustible</option>
-                                                                        <option>GASOLINA</option>
+                                                                        <option>Gasolina</option>
                                                                         <option>GLP</option>
-                                                                        <option>GASOIL</option>
-                                                                        <option>GAS_NATURAL</option>
-                                                                        <option>ELECTRICIDAD</option>
+                                                                        <option>Gasoil</option>
+                                                                        <option>Gas Natural</option>
+                                                                        <option>Eléctrico</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="form-group col-md-5" >
-                                                                <label for="combustible">Traccion del Vehiculo</label>
-                                                                <select class="form-control" id="traccion">
-                                                                    <option selected="">Traccion</option>
-                                                                    <option>FRONT_WHEEL</option>
-                                                                    <option>REAR_WHEEL</option>
-                                                                    <option>ALL_WHEEL</option>
-                                                                    <option>FOUR_WHEEL</option>
-                                                                    <option>FOUR_BY_FOUR</option>
-                                                                </select>
-                                                            </div>
-
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label for="accesorios">Accesorios</label>
@@ -325,17 +294,6 @@
                                                                     <input type="text" class="form-control" id="precio" placeholder="Precio">
                                                                 </div>
                                                             </div>
-
-                                                            <div class="form-group col-md-5">
-                                                                <label for="pasajeros">Motor</label>
-                                                                <input type="text" class="form-control" id="motor" placeholder="Motor">
-                                                            </div>
-
-                                                            <div class="custom-file mb-4">
-                                                                <input type="file" name="file" class="custom-file-input"
-                                                                    id="customFile"> <label class="custom-file-label"
-                                                                    for="customFile">Imagen Vehiculo</label>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -351,17 +309,7 @@
                             </div>
                         </div>
 
-                        <!-- [ Hover-table ] end -->
-                        <button type="button" class="btn btn-primary" value="Input Button" onclick="nuevoCliente()"><i class="feather icon-user-plus"></i>Nuevo cliente</button>
-                        <button type="button" class="btn btn-warning"><i class="feather icon-user"></i>Editar cliente</button>
-                        <button type="button" class="btn btn-danger"><i class="feather icon-user-x"></i>Eliminar cliente</button>
 
-<!--                        <script>-->
-<!--                            function nuevoCliente()-->
-<!--                            {-->
-<!--                                location.href = "FormCliente.html";-->
-<!--                            }-->
-<!--                        </script>-->
 
                     </div>
                     <!-- [ Main Content ] end -->
@@ -383,19 +331,17 @@
 <script src="assets/js/vendor-all.min.js"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/pcoded.min.js"></script>
+<!--     <script src="template/assets/plugins/jquery/js/jquery.min.js"></script>
+    <script src="template/assets/plugins/jquery-ui/js/jquery-ui.js"></script> -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script> -->
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-<script src="assets/js/Inventario.js"></script>
+<script src="assets/js/clientes.js"></script>
 
-<script>
-    // Add the following code if you want the name of the file appear on select
-    $(".custom-file-input").on("change", function() {
-      var fileName = $(this).val().split("\\").pop();
-      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    });
-</script>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 </body>
 </html>
