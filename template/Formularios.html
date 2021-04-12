@@ -55,11 +55,11 @@
                     <a href="Dashboard.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
                 </li>
 
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item active">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
                     <a href="Inventario.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-clipboard"></i></span><span class="pcoded-mtext">Inventario</span></a>
                 </li>
 
-                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item">
+                <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item active">
                     <a href="Formularios.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Formularios</span></a>
                 </li>
 
@@ -122,38 +122,31 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Inventario</h5>
+                                    <h5>Formularios</h5>
                                 </div>
-<!--                                <div id="scrolling-table_filter" class="dataTables_filter">-->
-<!--                                    <input type="search" class="form-control form-control-sm" placeholder="Buscar cliente por nombre" aria-controls="scrolling-table">-->
-<!--                                </div>-->
+                                <!--                                <div id="scrolling-table_filter" class="dataTables_filter">-->
+                                <!--                                    <input type="search" class="form-control form-control-sm" placeholder="Buscar cliente por nombre" aria-controls="scrolling-table">-->
+                                <!--                                </div>-->
                                 <div class="alert alert-primary" id="msg" style="display: none;" role="alert">
 
                                 </div>
 
                                 <div class="card-block">
                                     <div class="table-responsive">
-                                    <table id="tablaPrincipal" class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>#ID</th>
-                                            <th>Marca</th>
-                                            <th>Modelo</th>
-                                            <th>Version</th>
-                                            <th>Tipo</th>
-                                            <th>Año</th>
-                                            <th>Estado</th>
-                                            <th>Fecha</th>
-                                            <th>Condicion</th>
-                                            <th>Kilometraje</th>
-                                            <th>Transmisión</th>
-                                            <th>Traccion</th>
-                                            <th>Combustible</th>
+                                        <table id="tablaPrincipal" class="table table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>#ID</th>
+                                                <th>Nombre</th>
+                                                <th>Correo</th>
+                                                <th>Celular</th>
+                                                <th>Fecha</th>
+                                                <th>Tipo</th>
 
-                                        </tr>
-                                        </thead>
-                                        
-                                    </table>
+                                            </tr>
+                                            </thead>
+
+                                        </table>
                                     </div>
 
 
@@ -164,7 +157,7 @@
                                                 <div class="modal-content">
                                                     <div class="card">
                                                         <div class="card-header">
-                                                            <h5>Datos generales del vehiculo</h5>
+                                                            <h5>Formulario</h5>
                                                         </div>
                                                         <div class="card-body">
 
@@ -175,7 +168,7 @@
                                                                         <option selected="">Marca</option>
                                                                     </select>
                                                                 </div>
-=
+                                                                =
                                                                 <div class="form-group col-md-5">
                                                                     <label for="modelo">Modelo</label>
                                                                     <select id="modelo" class="form-control">
@@ -316,17 +309,7 @@
                             </div>
                         </div>
 
-                        <!-- [ Hover-table ] end -->
-                        <button type="button" class="btn btn-primary" value="Input Button" onclick="nuevoCliente()"><i class="feather icon-user-plus"></i>Nuevo cliente</button>
-                        <button type="button" class="btn btn-warning"><i class="feather icon-user"></i>Editar cliente</button>
-                        <button type="button" class="btn btn-danger"><i class="feather icon-user-x"></i>Eliminar cliente</button>
 
-<!--                        <script>-->
-<!--                            function nuevoCliente()-->
-<!--                            {-->
-<!--                                location.href = "FormCliente.html";-->
-<!--                            }-->
-<!--                        </script>-->
 
                     </div>
                     <!-- [ Main Content ] end -->
@@ -356,8 +339,8 @@
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-<!--<script src="assets/js/clientes.js"></script>-->
-<script src = "assets/js/Inventario.js"></script>
+<script src="assets/js/clientes.js"></script>
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 </body>
