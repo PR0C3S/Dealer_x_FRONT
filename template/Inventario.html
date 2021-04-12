@@ -158,7 +158,7 @@
 
 
 
-                                    <div class="modal fade bd-example-modal-lg" id="clienteModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                    <div class="modal fade bd-example-modal-lg" id="vehiculoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-content">
@@ -169,13 +169,24 @@
                                                         <div class="card-body">
 
                                                             <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="id_Vehiculo"></label>
+                                                                    <input type="hidden" class="form-control" id="id_Vehiculo" placeholder="ID">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="id_Version"></label>
+                                                                    <input type="hidden" class="form-control" id="id_Version" placeholder="ID">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label for="marca">Marca</label>
                                                                     <select id="marca" class="form-control">
                                                                         <option selected="">Marca</option>
                                                                     </select>
                                                                 </div>
-=
+
                                                                 <div class="form-group col-md-5">
                                                                     <label for="modelo">Modelo</label>
                                                                     <select id="modelo" class="form-control">
@@ -211,8 +222,8 @@
                                                                     <label for="condicion">Condición</label>
                                                                     <select class="form-control" id="condicion">
                                                                         <option selected="">Condición</option>
-                                                                        <option>Nuevo</option>
-                                                                        <option>Usado</option>
+                                                                        <option>NUEVO</option>
+                                                                        <option>USADO</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -265,24 +276,37 @@
                                                                     <label for="transmision">Tipo de transmisión</label>
                                                                     <select class="form-control" id="transmision">
                                                                         <option selected="">Transmisión</option>
-                                                                        <option>Manual</option>
+                                                                        <option>MANUAL</option>
+                                                                        <option>AUTOMATIZADAS_SECUENCIAL</option>
                                                                         <option>CVT</option>
-                                                                        <option>Automatizadas-Secuenciales</option>
-                                                                        <option>Automatizada de Doble Embrague</option>
+                                                                        <option>AUTOMATIZADA_DOBLE</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group col-md-5" >
                                                                     <label for="combustible">Tipo de combustible</label>
                                                                     <select class="form-control" id="combustible">
                                                                         <option selected="">Combustible</option>
-                                                                        <option>Gasolina</option>
+                                                                        <option>GASOLINA</option>
                                                                         <option>GLP</option>
-                                                                        <option>Gasoil</option>
-                                                                        <option>Gas Natural</option>
-                                                                        <option>Eléctrico</option>
+                                                                        <option>GASOIL</option>
+                                                                        <option>GAS_NATURAL</option>
+                                                                        <option>ELECTRICIDAD</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
+
+                                                            <div class="form-group col-md-5" >
+                                                                <label for="combustible">Traccion del Vehiculo</label>
+                                                                <select class="form-control" id="traccion">
+                                                                    <option selected="">Traccion</option>
+                                                                    <option>FRONT_WHEEL</option>
+                                                                    <option>REAR_WHEEL</option>
+                                                                    <option>ALL_WHEEL</option>
+                                                                    <option>FOUR_WHEEL</option>
+                                                                    <option>FOUR_BY_FOUR</option>
+                                                                </select>
+                                                            </div>
+
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label for="accesorios">Accesorios</label>
@@ -300,6 +324,17 @@
                                                                     <label for="precio">Precio</label>
                                                                     <input type="text" class="form-control" id="precio" placeholder="Precio">
                                                                 </div>
+                                                            </div>
+
+                                                            <div class="form-group col-md-5">
+                                                                <label for="pasajeros">Motor</label>
+                                                                <input type="text" class="form-control" id="motor" placeholder="Motor">
+                                                            </div>
+
+                                                            <div class="custom-file mb-4">
+                                                                <input type="file" name="file" class="custom-file-input"
+                                                                    id="customFile"> <label class="custom-file-label"
+                                                                    for="customFile">Imagen Vehiculo</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -348,17 +383,19 @@
 <script src="assets/js/vendor-all.min.js"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/pcoded.min.js"></script>
-<!--     <script src="template/assets/plugins/jquery/js/jquery.min.js"></script>
-    <script src="template/assets/plugins/jquery-ui/js/jquery-ui.js"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script> -->
 <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-<!--<script src="assets/js/clientes.js"></script>-->
-<script src = "assets/js/Inventario.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+<script src="assets/js/Inventario.js"></script>
+
+<script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>
+
 </body>
 </html>
