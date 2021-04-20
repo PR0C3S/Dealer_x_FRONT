@@ -205,23 +205,19 @@
 
                                                                 <div class="form-group col-md-5">
                                                                     <label for="tipo">Tipo de Vehiculo</label>
-                                                                    <select id="tipo" class="form-control">
-                                                                        <option selected="">Tipo</option>
-                                                                    </select>
+                                                                    <input type ="text" id="tipo" class="form-control" readonly="readonly"></inpput>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label>Año</label>
-                                                                    <input type="date" name="year" id="year" max="3000-12-31"
-                                                                           min="1000-01-01" class="form-control">
+                                                                    <input type="number" name="year" id="year" class="form-control">
                                                                 </div>
 
-                                                                <div class="form-group col-md-5" >
+                                                                <div class="form-group col-md-5">
                                                                     <label for="condicion">Condición</label>
                                                                     <select class="form-control" id="condicion">
-                                                                        <option selected="">Condición</option>
                                                                         <option>NUEVO</option>
                                                                         <option>USADO</option>
                                                                     </select>
@@ -230,10 +226,9 @@
 
                                                             <div class="form-row">
 
-                                                                <div class="form-group col-md-5" >
+                                                                <div class="form-group col-md-5">
                                                                     <label for="estado">Estado</label>
                                                                     <select class="form-control" id="estado">
-                                                                        <option selected="">Estado</option>
                                                                         <option>Disponible</option>
                                                                         <option>Agotado</option>
                                                                         <option>Espera</option>
@@ -262,49 +257,51 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label for="puertas">Puertas</label>
-                                                                    <input type="text" class="form-control" id="puertas" placeholder="Puertas">
+                                                                    <input type="text" class="form-control" id="puertas" placeholder="Puertas"
+                                                                    readonly="readonly">
                                                                 </div>
 
                                                                 <div class="form-group col-md-5">
                                                                     <label for="pasajeros">Pasajeros</label>
-                                                                    <input type="text" class="form-control" id="pasajeros" placeholder="Pasajeros">
+                                                                    <input type="text" class="form-control" id="pasajeros" placeholder="Pasajeros"
+                                                                    readonly="readonly">
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5" >
                                                                     <label for="transmision">Tipo de transmisión</label>
-                                                                    <select class="form-control" id="transmision">
-                                                                        <option selected="">Transmisión</option>
+                                                                    <input type="text" class="form-control" id="transmision" readonly=" readonly">
+                                                                        <!-- <option selected="">Transmisión</option>
                                                                         <option>MANUAL</option>
                                                                         <option>AUTOMATIZADAS_SECUENCIAL</option>
                                                                         <option>CVT</option>
-                                                                        <option>AUTOMATIZADA_DOBLE</option>
-                                                                    </select>
+                                                                        <option>AUTOMATIZADA_DOBLE</option> -->
+                                                                    </input>
                                                                 </div>
                                                                 <div class="form-group col-md-5" >
                                                                     <label for="combustible">Tipo de combustible</label>
-                                                                    <select class="form-control" id="combustible">
-                                                                        <option selected="">Combustible</option>
+                                                                    <input type="text" class="form-control" id="combustible" readonly=" readonly">
+                                                                        <!-- option selected="">Combustible</option>
                                                                         <option>GASOLINA</option>
                                                                         <option>GLP</option>
                                                                         <option>GASOIL</option>
                                                                         <option>GAS_NATURAL</option>
-                                                                        <option>ELECTRICIDAD</option>
-                                                                    </select>
+                                                                        <option>ELECTRICIDAD</option> -->
+                                                                    </input>
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-group col-md-5" >
                                                                 <label for="combustible">Traccion del Vehiculo</label>
-                                                                <select class="form-control" id="traccion">
-                                                                    <option selected="">Traccion</option>
+                                                                <input type="text" class="form-control" id="traccion" readonly=" readonly">
+                                                                    <!-- <option selected="">Traccion</option>
                                                                     <option>FRONT_WHEEL</option>
                                                                     <option>REAR_WHEEL</option>
                                                                     <option>ALL_WHEEL</option>
                                                                     <option>FOUR_WHEEL</option>
-                                                                    <option>FOUR_BY_FOUR</option>
-                                                                </select>
+                                                                    <option>FOUR_BY_FOUR</option> -->
+                                                                </input>
                                                             </div>
 
                                                             <div class="form-row">
