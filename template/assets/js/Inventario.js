@@ -5,32 +5,18 @@ var app = {
         app.initDataTable('#tablaPrincipal')
 
 
-        $('#marca').click(function () {
-            $.ajax({
-                url: app.backend + '/marcas/',
-                dataType: 'json',
-                error: function () {
-                    alert("Error en la petición");
-                }
-            }).done(function (marcas) {
-                $.each(marcas, function (i, item) {
-                    $('#marca')
-                    .append($('<option>', {
-                        value: item.nombreMarca,
-                        text: item.nombreMarca
-                    }));
-                });
-            });
-        })
+        /* $('#marca').click(function () {
+        }) */
 
         $('#marca').on('focus change', function(){
             $('#modelo').empty();
             //$('#tipo').empty();
             $('#version').empty();
             var nombreMarca = $('#marca').val();
+            console.log(nombreMarca);
 
             $.ajax({
-                url: app.backend + '/modelos/marca/?nombreMarca=' + nombreMarca,
+                url: app.backend + '/modelos/marca/?marca=' + nombreMarca,
                 dataType: 'json',
                 error: function(){
                     alert("Error en la peticion");
@@ -47,12 +33,10 @@ var app = {
 
         $('#modelo').on('focus change', function(){
             $('#version').empty();
-            //$('#tipo').empty();
-            //$('#version').empty();
-            var nombreVersion = $('#version').val();
+            var nombreModelo = $('#modelo').val();
 
             $.ajax({
-                url: app.backend + '/versiones/marca/?nombreMarca=' + nombreVersion, //*
+                url: app.backend + '/versiones/modelo/?modelo=' + nombreModelo, 
                 dataType: 'json',
                 error: function(){
                     alert("Error en la peticion");
@@ -60,11 +44,33 @@ var app = {
             }).done(function(tipos){
                 $.each(tipos, function(i,item){
                     $('#version').append($('<option>', {
-                        value: item.nombreVersion, //*
+                        value: item.nombreVersion,
                         text: item.nombreVersion
                         //Version_Vehiculo.nombreVersion
                     }));
                 });
+            });
+        });
+
+        $('#version').on('focus change', function(){
+            var nombreVersion = $('#version').val();
+            $.ajax({
+                url: app.backend + '/versiones/version/?version=' + nombreVersion,
+                dataType: 'json',
+                error: function(){
+                    alert("Error en la peticion");
+                },
+                success: function(data){
+                    console.log(data);
+                    $('#puertas').val(data.puertas);
+                    $('#pasajeros').val(data.pasajeros);
+                    $('#motor').val(data.motor);
+                    $('#combustible').val(data.combustible);
+                    $('#transmision').val(data.transmision);
+                    $('#traccion').val(data.traccion);
+                    $('#tipo').val(data.tipo);
+                }
+
             });
         });
 
@@ -80,8 +86,8 @@ var app = {
                 color_Exterior: $('#colorExt').val(),
                 color_Interior: $('#colorInt').val(),
                 precio: $('#precio').val(),
-                estado: $('#telefono').val(),
-                tipo: $('#estado').val(),
+                estado: $('#estado').val(),
+                tipo: $('#tipo').val(),
                 descripcion: $('#descripcion').val()
                 }
 
@@ -115,8 +121,8 @@ var app = {
                 color_Exterior: $('#colorExt').val(),
                 color_Interior: $('#colorInt').val(),
                 precio: $('#precio').val(),
-                estado: $('#telefono').val(),
-                tipo: $('#estado').val(),
+                estado: $('#estado').val(),
+                tipo: $('#tipo').val(),
                 descripcion: $('#descripcion').val()
                }
                var versionEdit={
@@ -208,16 +214,16 @@ var app = {
         $('#colorInt').val(data);
         $('#precio').val(data);
         $('#telefono').val(data);
-        //$('#estado').val(data);
+        $('#estado').val(data);
         $('#descripcion').val(data);
         $('#id_Version').val();
         //$('#version').val();
         $('#puertas').val();
         $('#pasajeros').val();
         $('#motor').val();
-        //$('#combustible').val();
-        //$('#transmision').val();
-        //$('#traccion').val();
+        $('#combustible').val();
+        $('#transmision').val();
+        $('#traccion').val();
         //$('#modelo').val();
     },
 
@@ -231,17 +237,35 @@ var app = {
         $('#colorInt').val('');
         $('#precio').val('');
         $('#telefono').val('');
-        $('#estado').empty();
+        $('#estado').val('');
         $('#descripcion').val('');
         $('#id_Version').val('');
-        $('#version').empty();
         $('#puertas').val('');
         $('#pasajeros').val('');
         $('#motor').val('');
-        $('#combustible').empty();
-        $('#transmision').empty();
-        $('#traccion').empty();
+        $('#combustible').val('');
+        $('#transmision').val('');
+        $('#traccion').val('');
+        $('#marca').empty();
         $('#modelo').empty();
+        $('#version').empty();
+        $('#modelo').empty();
+
+        $.ajax({
+            url: app.backend + '/marcas/',
+            dataType: 'json',
+            error: function () {
+                alert("Error en la petición");
+            }
+        }).done(function (marcas) {
+            $.each(marcas, function (i, item) {
+                $('#marca')
+                .append($('<option>', {
+                    value: item.nombreMarca,
+                    text: item.nombreMarca
+                }));
+            });
+        });
     },
 
     save : function(data){ //api call save
