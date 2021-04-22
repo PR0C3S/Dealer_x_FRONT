@@ -163,137 +163,49 @@
 
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
-                                                                    <label for="marca">Marca</label>
-                                                                    <select id="marca" class="form-control">
-                                                                        <option selected="">Marca</option>
-                                                                    </select>
+                                                                    <label for="nombre">Nombre</label>
+                                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
                                                                 </div>
-                                                                =
                                                                 <div class="form-group col-md-5">
-                                                                    <label for="modelo">Modelo</label>
-                                                                    <select id="modelo" class="form-control">
-                                                                        <option selected="">Modelo</option>
-                                                                    </select>
+                                                                    <label for="celular">Celular</label>
+                                                                    <input type="text" class="form-control" id="celular" placeholder="Celular">
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
-                                                                    <label for="version">Version</label>
-                                                                    <select id="version" class="form-control">
-                                                                        <option selected="">Version</option>
-                                                                    </select>
+                                                                    <label for="correo">Correo</label>
+                                                                    <input type="text" class="form-control" id="correo" placeholder="Correo">
                                                                 </div>
 
                                                                 <div class="form-group col-md-5">
-                                                                    <label for="tipo">Tipo de Vehiculo</label>
-                                                                    <select id="tipo" class="form-control">
-                                                                        <option selected="">Tipo</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5">
-                                                                    <label>Año</label>
-                                                                    <input type="date" name="year" id="year" max="3000-12-31"
+                                                                    <label>Fecha</label>
+                                                                    <input type="date" name="fecha" id="fecha" max="3000-12-31"
                                                                            min="1000-01-01" class="form-control">
                                                                 </div>
+                                                            </div>
 
-                                                                <div class="form-group col-md-5" >
-                                                                    <label for="condicion">Condición</label>
-                                                                    <select class="form-control" id="condicion">
-                                                                        <option selected="">Condición</option>
-                                                                        <option>Nuevo</option>
-                                                                        <option>Usado</option>
-                                                                    </select>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="monto">Monto ofrecido</label>
+                                                                    <input type="text" class="form-control" id="monto" placeholder="Monto">
+                                                                </div>
+
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="comentario">Comentario</label>
+                                                                    <input type="text" class="form-control" id="comentario" placeholder="Comentario">
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
 
-                                                                <div class="form-group col-md-5" >
-                                                                    <label for="estado">Estado</label>
-                                                                    <select class="form-control" id="estado">
-                                                                        <option selected="">Estado</option>
-                                                                        <option>Disponible</option>
-                                                                        <option>Agotado</option>
-                                                                        <option>Espera</option>
-                                                                    </select>
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="financiado">Financiado?</label>
+                                                                    <input type="text" class="form-control" id="financiado">
                                                                 </div>
 
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="kilometraje">Kilometraje</label>
-                                                                    <input type="text" class="form-control" id="kilometraje" placeholder="Kilometraje">
-                                                                </div>
                                                             </div>
-
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="colorExt">Color Exterior</label>
-                                                                    <input type="text" class="form-control" id="colorExt" placeholder="Color Exterior">
-                                                                </div>
-
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="colorInt">Color Interior</label>
-                                                                    <input type="text" class="form-control" id="colorInt" placeholder="Color Interior">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="puertas">Puertas</label>
-                                                                    <input type="text" class="form-control" id="puertas" placeholder="Puertas">
-                                                                </div>
-
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="pasajeros">Pasajeros</label>
-                                                                    <input type="text" class="form-control" id="pasajeros" placeholder="Pasajeros">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5" >
-                                                                    <label for="transmision">Tipo de transmisión</label>
-                                                                    <select class="form-control" id="transmision">
-                                                                        <option selected="">Transmisión</option>
-                                                                        <option>Manual</option>
-                                                                        <option>CVT</option>
-                                                                        <option>Automatizadas-Secuenciales</option>
-                                                                        <option>Automatizada de Doble Embrague</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group col-md-5" >
-                                                                    <label for="combustible">Tipo de combustible</label>
-                                                                    <select class="form-control" id="combustible">
-                                                                        <option selected="">Combustible</option>
-                                                                        <option>Gasolina</option>
-                                                                        <option>GLP</option>
-                                                                        <option>Gasoil</option>
-                                                                        <option>Gas Natural</option>
-                                                                        <option>Eléctrico</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="accesorios">Accesorios</label>
-                                                                    <input type="text" class="form-control" id="accesorios" placeholder="Accesorios">
-                                                                </div>
-
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="descripcion">Descripción</label>
-                                                                    <input type="text" class="form-control" id="descripcion" placeholder="Descripción">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-5">
-                                                                    <label for="precio">Precio</label>
-                                                                    <input type="text" class="form-control" id="precio" placeholder="Precio">
-                                                                </div>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -306,7 +218,11 @@
                                     </div><!-- end of modal -->
 
                                 </div>
+
+
+                                </div>
                             </div>
+
                         </div>
 
 
