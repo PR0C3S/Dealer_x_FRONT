@@ -68,61 +68,67 @@ var app = {
 
         $("#save").click(function(){ //click en el boton de guardar en el modal
 
-            if($('#id_Empleado').val() === ''){ //si el input escondido de id esta vacio
-                var empleado={
-                    id_Empleado: $('#id_Empleado').val(),
-                    nombreCompleto: $('#nombreCompleto').val(),
-                    password: $('#password').val(),
-                    cedula: $('#cedula').val(),
+            if( password.value != confirm_password.value){
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            }else{
+                confirm_password.setCustomValidity('');
+                if($('#id_Empleado').val() === ''){ //si el input escondido de id esta vacio
+                    var empleado={
+                        id_Empleado: $('#id_Empleado').val(),
+                        nombreCompleto: $('#nombreCompleto').val(),
+                        password: $('#password').val(),
+                        cedula: $('#cedula').val(),
 
-                    tipo: $('#tipo').val(),
-                    estado: $('#estado').val(),
+                        tipo: $('#tipo').val(),
+                        estado: $('#estado').val(),
 
-                    email: $('#email').val(),
-                    sexo: $('#sexo').val(),
-                    celular: $('#celular').val(),
-                    telefono: $('#telefono').val()
-                }
-                var ubicacion={
-                    calle: $('#calle').val(),
-                    casa: $('#casa').val(),
-                };
+                        email: $('#email').val(),
+                        sexo: $('#sexo').val(),
+                        celular: $('#celular').val(),
+                        telefono: $('#telefono').val()
+                    }
+                    var ubicacion={
+                        calle: $('#calle').val(),
+                        casa: $('#casa').val(),
+                    };
 
-                var data={
-                    empleado:empleado,
-                    ubicacion:ubicacion,
-                    nombreSector:$('#sector').val()
-                };
-                app.save( //funcion que llama al save del api
-                    data
-                );
-            }else{ //funcion que llama al edit del api
-                var empleadoEdit={
-                    id_Empleado: $('#id_Empleado').val(),
-                    nombreCompleto: $('#nombreCompleto').val(),
-                    cedula: $('#cedula').val(),
-                    email: $('#email').val(),
-                    password: $('#password').val(),
-                    sexo: $('#sexo').val(),
-                    celular: $('#celular').val(),
-                    telefono: $('#telefono').val(),
-                    tipo: $('#tipo').val(),
-                    estado: $('#estado').val()
+                    var data={
+                        empleado:empleado,
+                        ubicacion:ubicacion,
+                        nombreSector:$('#sector').val()
+                    };
+                    app.save( //funcion que llama al save del api
+                        data
+                    );
+                }else{ //funcion que llama al edit del api
+                    var empleadoEdit={
+                        id_Empleado: $('#id_Empleado').val(),
+                        nombreCompleto: $('#nombreCompleto').val(),
+                        cedula: $('#cedula').val(),
+                        email: $('#email').val(),
+                        password: $('#password').val(),
+                        sexo: $('#sexo').val(),
+                        celular: $('#celular').val(),
+                        telefono: $('#telefono').val(),
+                        tipo: $('#tipo').val(),
+                        estado: $('#estado').val()
+                    }
+                    var ubicacionEdit={
+                        id_Ubicacion: $('#id_Ubicacion').val(),
+                        calle: $('#calle').val(),
+                        casa: $('#casa').val()
+                    }
+                    var dataEdit={
+                        empleado: empleadoEdit,
+                        ubicacion: ubicacionEdit,
+                        nombreSector: $('#sector').val()
+                    };
+                    app.edit(
+                        dataEdit
+                    );
                 }
-                var ubicacionEdit={
-                    id_Ubicacion: $('#id_Ubicacion').val(),
-                    calle: $('#calle').val(),
-                    casa: $('#casa').val()
-                }
-                var dataEdit={
-                    empleado: empleadoEdit,
-                    ubicacion: ubicacionEdit,
-                    nombreSector: $('#sector').val()
-                };
-                app.edit(
-                    dataEdit
-                );
             }
+
             
 
             //password.onchange = validatePassword;
