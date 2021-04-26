@@ -15,6 +15,16 @@ var app = {
             window.location.href = "vehicul.html?idVehiculo=" + $(this).parent().siblings('p').text();
             //localStorage.setItem("idVehiculo", "abc123");
         });
+
+        $('#submit').click(function (){
+            if($('#password') !== "" && $('#correo') !== ""){
+                var info = {
+                    correo : $("#correo").val(),
+                    password: $("#password").val()
+                };
+                app.login(info);
+            }
+        });
     },
 
 
@@ -55,6 +65,26 @@ var app = {
         });
         
     },//end loadVehiculos
+
+    login: function(info) {
+        console.log(info)
+        $.ajax({
+            url: app.backend + '/empleados/login',
+            data: {email: info.correo, password: info.password},
+            method: "GET",
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function (json){
+                //alert(json.authenticated);
+                if (json.authenticated === "true") {
+                    //app.logged = true;
+                    window.location.href = "Dashboard.html"
+                }else{
+                    alert(json.message);
+                }
+            }
+        })
+    }//end login
 };
 
 

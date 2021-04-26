@@ -13,7 +13,7 @@ var app = {
                 app.login(info);
             }
 
-        })
+        });
     },
 
     login: function(info) {

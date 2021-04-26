@@ -211,7 +211,7 @@ var app = {
         $('#casa').val(data.ubicacion.casa);
     },
     cleanForm: function(){ //vacia la data de la modal
-        $('#id_Cliente').val('');
+        $('#id_Empleado').val('');
         $('#id_Ubicacion').val('');
         $('#nombreCompleto').val('');
         $('#cedula').val('');
