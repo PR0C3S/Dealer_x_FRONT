@@ -2,10 +2,19 @@ var app = {
     backend: 'http://localhost:8080',
     vehiculos: null,
     init: function(){
-        //app.initDataTable('#tablaPrincipal')
         app.loadVehiculos();
 
+        $('.proeprty-sh-more').click(function(){
+            //console.log($(this).parent().siblings('p').text());
+            window.location.href = "vehicul.html?idVehiculo=" + $(this).parent().siblings('p').text();
+            //localStorage.setItem("idVehiculo", "abc123");
+        });
 
+        $('.nombre').click(function(){
+            //console.log($(this).parent().siblings('p').text());
+            window.location.href = "vehicul.html?idVehiculo=" + $(this).parent().siblings('p').text();
+            //localStorage.setItem("idVehiculo", "abc123");
+        });
     },
 
 
@@ -24,7 +33,7 @@ var app = {
 
         jQuery.when(
             jQuery.getJSON(app.backend + '/vehiculos/')
-        ).done( function(json) {
+        ).done(function(json) {
             app.vehiculos = json;
             console.log(app.vehiculos);
 
