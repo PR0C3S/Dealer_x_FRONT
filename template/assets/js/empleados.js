@@ -69,9 +69,12 @@ var app = {
         $("#save").click(function(){ //click en el boton de guardar en el modal
 
             if( password.value != confirm_password.value){
-                confirm_password.setCustomValidity("Passwords Don't Match");
+
+                window.alert("Error");
+                alert("Las contraseñas no coinciden");
+                //confirm_password.setCustomValidity("Passwords Don't Match");
             }else{
-                confirm_password.setCustomValidity('');
+                //confirm_password.setCustomValidity('');
                 if($('#id_Empleado').val() === ''){ //si el input escondido de id esta vacio
                     var empleado={
                         id_Empleado: $('#id_Empleado').val(),
