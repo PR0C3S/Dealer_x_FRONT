@@ -13,7 +13,7 @@ var app = {
             //$('#tipo').empty();
             $('#version').empty();
             var nombreMarca = $('#marca').val();
-
+            console.log(nombreMarca);
             $.ajax({
                 url: app.backend + '/modelos/marca/?marca=' + nombreMarca,
                 dataType: 'json',
@@ -249,10 +249,10 @@ var app = {
         $('#combustible').val('');
         $('#transmision').val('');
         $('#traccion').val('');
-        $('#marca').empty();
+        //$('#marca').empty();
         $('#modelo').empty();
         $('#version').empty();
-        $('#modelo').empty();
+        //$('#modelo').empty();
 
         $.ajax({
             url: app.backend + '/marcas/',

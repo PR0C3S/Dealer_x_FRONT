@@ -30,14 +30,34 @@ var app = {
             json.versionVehiculo.modeloVehiculo.nombreModelo + ' ' +
             json.versionVehiculo.nombreVersion + ' ' + json.ano);
 
-            $('#precio').html('Precio: $' + json.precio);
             $('#marca').html(json.versionVehiculo.modeloVehiculo.marcaVehiculo.nombreMarca);
             $('#modelo').html(json.versionVehiculo.modeloVehiculo.nombreModelo);
-
+            $('#version').html(json.versionVehiculo.nombreVersion);
             $('#tipo').html(json.versionVehiculo.tipo);
-            $('#colorExt').html(json.color_Exterior);
+            $('#colorExterior').html(json.color_Exterior);
+            $('#colorInterior').html(json.color_Interior);
+            $('#anno').html(json.ano);
+            $('#condicion').html(json.condicion);
+            $('#estado').html(json.estado);
+            $('#transmision').html(json.versionVehiculo.transmision);
+            $('#traccion').html(json.versionVehiculo.traccion);
             $('#kilometraje').html(json.kilometraje + 'KM');
             $('#combustible').html(json.versionVehiculo.combustible);
+            $('#pasajeros').html(json.versionVehiculo.pasajeros);
+            $('#puertas').html(json.versionVehiculo.puertas);
+            $('#motor').html(json.versionVehiculo.motor);
+
+            $('#descripcion').html(json.descripcion);
+            $('#accesorios').html(json.accesorios);
+
+            $('#precio').html('Precio: $' + json.precio);
+
+
+
+
+
+
+
             //$('#precio').html('Precio: $' + json.precio);
 
             /* $.each($('.vehiculs-box'), function(index,value){
