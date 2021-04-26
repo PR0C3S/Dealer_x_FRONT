@@ -1,74 +1,146 @@
 var app = {
-    backend: 'http://localhost:8080/empleados',
+
+    password: document.getElementById("password"),
+    confirm_password: document.getElementById("confirm_password"),
+    backend: 'http://localhost:8080',
     table: null,
     init: function(){
         app.initDataTable('#tablaPrincipal')
 
-        $("#save").click(function(){
-            // if($('#id').val() === ''){
-                app.save({
-
-                    //datos de la persona
-                    //id: $('#id').val(),
-                    nombreCompleto : $('#Nombre').val(),
-                    cedula: $('#Cedula').val(),
-                    email: $('#Correo').val(),
-                    //fecha_Creacion: $('#FechaNacimiento').val(),
-                    sexo: $('#Sexo').val(),
-
-                    celular : $('#Celular').val(),
-                    telefono: $('#Telefono').val(),
-                    password: $('#Contrasena').val(),
-                    //ConfContrasena: $('#ConfContrasena').val(),
-                    tipo: $('#Tipo').val(),
-                    //cuentaBancaria: $('#Cuenta').val(),
-                    estado: $('#Estado').val(),
-
-                    /*
-                                        //datos de residencia
-                                        Provincia: $('#Provincia').val(),
-                                        Municipio: $('#Municipio').val(),
-                                        Sector: $('#Sector').val(),
-                                        Calle: $('#Calle').val(),
-                                        Casa: $('#Casa').val(),
-                                        Apartamento: $('#Apartamento').val()*/
-
+        $('#provincia').click(function(){
+            $.ajax({
+                url: app.backend + '/provincias/',
+                dataType: 'json',
+                error: function(){
+                    alert("Error en la peticion");
+                }
+            }).done(function(provincias){
+                $.each(provincias, function(i,item){
+                    $('#provincia')
+                        .append($('<option>', {
+                            value: item.nombreProvincia,
+                            text: item.nombreProvincia
+                        }));
                 });
-            // } else {
-            //     app.edit($('id').val()*1,
-            //         {
-            //             //datos de la persona
-            //             //id: $('#id').val(),
-            //             Nombre : $('#Nombre').val(),
-            //             Cedula: $('#Cedula').val(),
-            //             Correo: $('#Correo').val(),
-            //             FechaNacimiento: $('#FechaNacimiento').val(),
-            //             Sexo: $('#Sexo').val(),
-            //             Celular : $('#Celular').val(),
-            //             Telefono: $('#Telefono').val(),
-            //             Contrasena: $('#Contrasena').val(),
-            //             ConfContrasena: $('#ConfContrasena').val(),
-            //             Tipo: $('#Tipo').val(),
-            //             Cuenta: $('#Cuenta').val(),
-            //             Estado: $('#Estado').val(),
-            //             /*
-            //                                 //datos de residencia
-            //                                 Provincia: $('#Provincia').val(),
-            //                                 Municipio: $('#Municipio').val(),
-            //                                 Sector: $('#Sector').val(),
-            //                                 Calle: $('#Calle').val(),
-            //                                 Casa: $('#Casa').val(),
-            //                                 Apartamento: $('#Apartamento').val()*/
-            //
-            //
-            //         });
-            // }
+            });
+        })
+
+        $('#provincia').on('focus change', function(){
+            $('#municipio').empty();
+            $('#sector').empty();
+            var nombreProvincia = $("#provincia").val();
+
+            $.ajax({
+                url: app.backend + '/municipios/municipiosenprovincia/?nombreProvincia=' + nombreProvincia,
+                dataType: 'json',
+                error: function(){
+                    alert("Error en la peticion");
+                }
+            }).done(function(tipos){
+                $.each(tipos, function(i,item){
+                    $('#municipio').append($('<option>', {
+                        value: item.nombreMunicipio,
+                        text: item.nombreMunicipio
+                    }));
+                });
+            });
+        });
+
+        $('#municipio').on('focus change', function(){
+            $('#sector').empty();
+            var nombreMunicipio = $("#municipio").val();
+
+            $.ajax({
+                url: app.backend + '/sectores/sectoresenmunicipio/?nombreMunicipio=' + nombreMunicipio,
+                dataType: 'json',
+                error: function(){
+                    alert("Error en la peticion");
+                }
+            }).done(function(tipos){
+                $.each(tipos, function(i,item){
+                    $('#sector').append($('<option>', {
+                        value: item.nombreSector,
+                        text: item.nombreSector
+                    }));
+                });
+            });
+        });
+
+        $("#save").click(function(){ //click en el boton de guardar en el modal
+
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+
+                if($('#id_Empleado').val() === ''){ //si el input escondido de id esta vacio
+
+                    var empleado={
+                        id_Empleado: $('#id_Empleado').val(),
+                        nombreCompleto: $('#nombreCompleto').val(),
+                        password: $('#password').val(),
+                        cedula: $('#cedula').val(),
+
+                        tipo: $('#tipo').val(),
+                        estado: $('#estado').val(),
+
+                        email: $('#email').val(),
+                        sexo: $('#sexo').val(),
+                        celular: $('#celular').val(),
+                        telefono: $('#telefono').val()
+                    }
+                    var ubicacion={
+                        calle: $('#calle').val(),
+                        casa: $('#casa').val(),
+                    };
+
+                    var data={
+                        empleado:empleado,
+                        ubicacion:ubicacion,
+                        nombreSector:$('#sector').val()
+                    };
+                    app.save( //funcion que llama al save del api
+                        data
+                    );
+                }else{ //funcion que llama al edit del api
+                    var empleadoEdit={
+                        id_Empleado: $('#id_Empleado').val(),
+                        nombreCompleto: $('#nombreCompleto').val(),
+                        cedula: $('#cedula').val(),
+                        email: $('#email').val(),
+                        password: $('#password').val(),
+                        sexo: $('#sexo').val(),
+                        celular: $('#celular').val(),
+                        telefono: $('#telefono').val(),
+                        tipo: $('#tipo').val(),
+                        estado: $('#estado').val()
+                    }
+                    var ubicacionEdit={
+                        id_Ubicacion: $('#id_Ubicacion').val(),
+                        calle: $('#calle').val(),
+                        casa: $('#casa').val()
+                    }
+                    var dataEdit={
+                        cliente: clienteEdit,
+                        ubicacion: ubicacionEdit,
+                        nombreSector: $('#sector').val()
+                    };
+                    app.edit(
+                        dataEdit
+                    );
+                }
+            }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+
+
         });
     },
-    initDataTable : function(id){
+    initDataTable : function(id){ //funcion que llena la tabla de data con el get del api
         app.table = $(id).DataTable({
             ajax : {
-                url : app.backend + '/',
+                url : app.backend + '/clientes/',
                 dataSrc : function(json){
                     return json;
                 }
@@ -76,29 +148,16 @@ var app = {
             dom: 'Bfrtip',
 
             columns : [
-                //datos de la persona
                 {data : "id_Empleado"},
                 {data : "nombreCompleto"},
                 {data : "cedula"},
-                {data : "email"},
-                {data : "fecha_Creacion"},
                 {data : "sexo"},
+                {data : "email"},
                 {data : "celular"},
                 {data : "telefono"},
-                {data : "password"},
-                //{data : "ConfContrasena"},
                 {data : "tipo"},
-                //{data : "Cuenta"},
-                {data : "estado"}
+                {data : "estado"},
 
-                //
-                // //datos de residencia
-                // {data : "Provincia"},
-                // {data : "Municipio"},
-                // {data : "Sector"},
-                // {data : "Calle"},
-                // {data : "Casa"},
-                // {data : "Apartamento"}
             ],
             buttons: [
                 {
@@ -121,7 +180,7 @@ var app = {
                     action : function(e, dt, node, config){
                         var data = dt.rows('.table-active').data()[0];
                         if(confirm('¿Esta seguro que desea eliminar el registro?')){
-                            app.delete(data.id);
+                            app.delete(data.id_Empleado);
                         }
                     }
                 }
@@ -138,60 +197,49 @@ var app = {
         });
     },
     setDataToModal : function(data){
-        //datos de la persona
-        $('#id').val(data.id),
-            $('#Nombre').val(data.nombreCompleto),
-            $('#Cedula').val(data.cedula),
-            $('#Correo').val(data.email),
-            $('#FechaNacimiento').val(data.fecha_Nacimiento),
-            $('#Sexo').val(data.sexo),
-            $('#Celular').val(data.celular),
-            $('#Telefono').val(data.telefono),
-            $('#Contrasena').val(data.password),
-            //$('#ConfContrasena').val(data.confpassword),
-            $('#Tipo').val(data.Tipo),
-            //$('#Cuenta').val(data.Cuenta),
-            $('#Estado').val(data.Estado)
+        $('#id_Empleado').val(data.id_Empleado);
+        $('#nombreCompleto').val(data.nombreCompleto);
+        $('#cedula').val(data.cedula);
+        $('#email').val(data.email);
+        $('#sexo').val(data.sexo);
+        $('#celular').val(data.celular);
+        $('#telefono').val(data.telefono);
 
+        $('#tipo').val(data.tipo),
+        $('#estado').val(data.estado),
 
-        /* //datos de residencia
-         $('#Provincia').val(data.Provincia),
-         $('#Municipio').val(data.Municipio),
-         $('#Sector').val(data.Sector),
-         $('#Calle').val(data.Calle),
-         $('#Casa').val(data.Casa),
-         $('#Apartamento').val(data.Apartamento)*/
+        $('#id_Ubicacion').val(data.ubicacion.id_Ubicacion);
+        //estos 3 no se como cargarlos bien
+        //$('#provincia').append(data.ubicacion.sector.nombreMunicipio.nombreProvincia.nombreProvincia).select();
+        //$('#municipio').append(data.ubicacion.sector.nombreMunicipio.nombreMunicipio);
+        //$('#sector').append(data.ubicacion.sector.nombreSector);
+        $('#calle').val(data.ubicacion.calle);
+        $('#casa').val(data.ubicacion.casa);
     },
-    cleanForm: function(){
-
-        //datos de la persona
-        $('#id').val(''),
-            $('#Nombre').val(''),
-            $('#Cedula').val(''),
-            $('#Correo').val(''),
-            $('#FechaNacimiento').val(''),
-            $('#Sexo').val('< Seleccionar sexo >'),
-            $('#Celular').val(''),
-            $('#Telefono').val(''),
-            $('#Contrasena').val(''),
-            $('#ConfContrasena').val(''),
-            $('#Tipo').val('< Seleccionar tipo de empleado >'),
-            $('#Cuenta').val(' '),
-            $('#Estado').val('< Seleccionar estado >')
-
-        //datos de residencia
-        $('#Provincia').val('< Seleccionar provincia >'),
-            $('#Municipio').val('< Seleccionar municipio >'),
-            $('#Sector').val(''),
-            $('#Calle').val(''),
-            $('#Casa').val(''),
-            $('#Apartamento').val('')
+    cleanForm: function(){ //vacia la data de la modal
+        $('#id_Cliente').val('');
+        $('#id_Ubicacion').val('');
+        $('#nombreCompleto').val('');
+        $('#cedula').val('');
+        $('#email').val('');
+        $('#password').val('');
+        $('#sexo').val('');
+        $('#celular').val('');
+        $('#telefono').val('');
+        $('#calle').val('');
+        $('#casa').val('');
+        $('#provincia').empty();
+        $('#municipio').empty();
+        $('#tipo').empty(),
+        $('#estado').empty(),
+        $('#sector').empty();
     },
 
-    save : function(data){
+    save : function(data){ //api call save
+
         $.ajax({
-            url: app.backend + '/save',
-            data : JSON.stringify(data),
+            url: app.backend + '/empleados/save',///save/' + sector,
+            data : JSON.stringify({empleado: data.empleado, ubicacion: data.ubicacion, sector: data.nombreSector}),
             method: 'POST',
             dataType : 'json',
             contentType: 'application/json; charset=utf-8',
@@ -207,9 +255,9 @@ var app = {
             }
         })
     },
-    delete : function(id){
+    delete : function(id){ //api call delete
         $.ajax({
-            url: app.backend + '/delete' + '?ID=' + id,
+            url: app.backend + '/empleados/delete' + '?ID=' + id,
 
             method: 'DELETE',
             dataType : 'json',
@@ -225,11 +273,11 @@ var app = {
             }
         })
     },
-    edit : function(id,data){
-        $.ajax({
-            url: app.backend + '/edit' + '?ID=' + id,
-            data : JSON.stringify(data),
+    edit : function(data){ //api call edit
 
+        $.ajax({
+            url: app.backend + '/empleados/edit' /* + '?ID=' + id */,
+            data : JSON.stringify({empleado:data.empleado, ubicacion: data.ubicacion, sector: data.nombreSector}),
             method: 'PUT',
             dataType : 'json',
             contentType: 'application/json; charset=utf-8',
