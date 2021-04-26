@@ -38,7 +38,7 @@
 <nav class="pcoded-navbar">
     <div class="navbar-wrapper">
         <div class="navbar-brand header-logo">
-            <a href="index.html" class="b-brand">
+            <a href="Dashboard.html" class="b-brand">
                 <div class="b-bg">
                     <i class="feather icon-trending-up"></i>
                 </div>
@@ -107,8 +107,8 @@
                                 </div>
 
                                 <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                                    <li class="breadcrumb-item"><a href="#!">Inventario</a></li>
+                                    <li class="breadcrumb-item"><a href="Dashboard.html"><i class="feather icon-home"></i></a></li>
+                                    <li class="breadcrumb-item"><a href="Inventario.html">Inventario</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -198,14 +198,14 @@
 
                                                                 <div class="form-group col-md-5">
                                                                     <label for="tipo">Tipo de Vehiculo</label>
-                                                                    <input type ="text" id="tipo" class="form-control" readonly="readonly"></inpput>
+                                                                    <input type ="text" id="tipo" class="form-control" readonly="readonly">
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
-                                                                    <label>Año</label>
-                                                                    <input type="number" name="year" id="year" class="form-control">
+                                                                    <label for="year">Año</label>
+                                                                    <input type="number" id="year" class="form-control autonumber" data-v-max="9999" data-v-min="0">
                                                                 </div>
 
                                                                 <div class="form-group col-md-5">
@@ -230,7 +230,7 @@
 
                                                                 <div class="form-group col-md-5">
                                                                     <label for="kilometraje">Kilometraje</label>
-                                                                    <input type="text" class="form-control" id="kilometraje" placeholder="Kilometraje">
+                                                                    <input type="number" id="kilometraje" class="form-control autonumber" data-v-max="9999" data-v-min="0">
                                                                 </div>
                                                             </div>
 
@@ -250,13 +250,13 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label for="puertas">Puertas</label>
-                                                                    <input type="text" class="form-control" id="puertas" placeholder="Puertas"
+                                                                    <input type="number" class="form-control" id="puertas" placeholder="Puertas"
                                                                     readonly="readonly">
                                                                 </div>
 
                                                                 <div class="form-group col-md-5">
                                                                     <label for="pasajeros">Pasajeros</label>
-                                                                    <input type="text" class="form-control" id="pasajeros" placeholder="Pasajeros"
+                                                                    <input type="number" class="form-control" id="pasajeros" placeholder="Pasajeros"
                                                                     readonly="readonly">
                                                                 </div>
                                                             </div>
@@ -264,37 +264,37 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5" >
                                                                     <label for="transmision">Tipo de transmisión</label>
-                                                                    <input type="text" class="form-control" id="transmision" readonly=" readonly">
+                                                                    <input type="text" class="form-control" id="transmision" readonly="readonly">
                                                                         <!-- <option selected="">Transmisión</option>
                                                                         <option>MANUAL</option>
                                                                         <option>AUTOMATIZADAS_SECUENCIAL</option>
                                                                         <option>CVT</option>
                                                                         <option>AUTOMATIZADA_DOBLE</option> -->
-                                                                    </input>
+
                                                                 </div>
                                                                 <div class="form-group col-md-5" >
                                                                     <label for="combustible">Tipo de combustible</label>
-                                                                    <input type="text" class="form-control" id="combustible" readonly=" readonly">
+                                                                    <input type="text" class="form-control" id="combustible" readonly="readonly">
                                                                         <!-- option selected="">Combustible</option>
                                                                         <option>GASOLINA</option>
                                                                         <option>GLP</option>
                                                                         <option>GASOIL</option>
                                                                         <option>GAS_NATURAL</option>
                                                                         <option>ELECTRICIDAD</option> -->
-                                                                    </input>
+
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5" >
-                                                                    <label for="combustible">Traccion del Vehiculo</label>
-                                                                    <input type="text" class="form-control" id="traccion" readonly=" readonly">
+                                                                    <label for="traccion">Traccion del Vehiculo</label>
+                                                                    <input type="text" class="form-control" id="traccion" readonly="readonly">
                                                                     <!-- <option selected="">Traccion</option>
                                                                     <option>FRONT_WHEEL</option>
                                                                     <option>REAR_WHEEL</option>
                                                                     <option>ALL_WHEEL</option>
                                                                     <option>FOUR_WHEEL</option>
                                                                     <option>FOUR_BY_FOUR</option> -->
-                                                                    </input>
+
                                                                 </div>
                                                                 <div class="form-group col-md-5">
                                                                     <label for="motor">Motor</label>
@@ -317,7 +317,7 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-5">
                                                                     <label for="precio">Precio</label>
-                                                                    <input type="text" class="form-control" id="precio" placeholder="Precio">
+                                                                    <input type="number" class="form-control" id="precio" placeholder="Precio">
                                                                 </div>
                                                             </div>
 
@@ -344,9 +344,7 @@
                         </div>
 
                         <!-- [ Hover-table ] end -->
-                        <button type="button" class="btn btn-primary" value="Input Button" onclick="nuevoCliente()"><i class="feather icon-user-plus"></i>Nuevo cliente</button>
-                        <button type="button" class="btn btn-warning"><i class="feather icon-user"></i>Editar cliente</button>
-                        <button type="button" class="btn btn-danger"><i class="feather icon-user-x"></i>Eliminar cliente</button>
+
 
 <!--                        <script>-->
 <!--                            function nuevoCliente()-->
@@ -363,7 +361,7 @@
         </div>
     </div>
 
-    </div>
+
 
 </section><!-- [ Header ] end -->
 
@@ -381,13 +379,13 @@
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <script src="assets/js/Inventario.js"></script>
 
-<script>
-    // Add the following code if you want the name of the file appear on select
-    $(".custom-file-input").on("change", function() {
-      var fileName = $(this).val().split("\\").pop();
-      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    });
-</script>
+<!--<script>-->
+<!--    // Add the following code if you want the name of the file appear on select-->
+<!--    $(".custom-file-input").on("change", function() {-->
+<!--      var fileName = $(this).val().split("\\").pop();-->
+<!--      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);-->
+<!--    });-->
+<!--</script>-->
 
 </body>
 </html>

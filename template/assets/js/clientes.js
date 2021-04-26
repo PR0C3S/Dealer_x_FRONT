@@ -64,56 +64,67 @@ var app = {
         });
 
         $("#save").click(function(){ //click en el boton de guardar en el modal
-             if($('#id_Cliente').val() === ''){ //si el input escondido de id esta vacio
+            if( $('#nombreCompleto').val() === "" || $("#cedula").val() === '' ||  $("#email").val() === '' ||
+                $("#sexo").val() === '' || $('#fecha_Nacimiento').val()  === '' || $("#provincia").val() === '' ||
+                $("#celular").val() === '' ||  $("#telefono").val() === '' ||  $("#calle").val() === '' ||
+                $("#casa").val() === '' ||  $("#sector").val() === '' ||  $("#municipio").val() === ''
 
-                var cliente={
-                id_Cliente: $('#id_Cliente').val(), 
-                nombreCompleto: $('#nombreCompleto').val(),
-                cedula: $('#cedula').val(),
-                email: $('#email').val(),
-                fecha_Nacimiento: $('#fecha_Nacimiento').val(),
-                sexo: $('#sexo').val(),
-                celular: $('#celular').val(),
-                telefono: $('#telefono').val()
-                }
-                var ubicacion={
-                calle: $('#calle').val(),
-                casa: $('#casa').val(),
-                };
 
-                var data={
-                    cliente:cliente,
-                    ubicacion:ubicacion,
-                    nombreSector:$('#sector').val()
-                };
-                app.save( //funcion que llama al save del api
-                    data
-                );
-            }else{ //funcion que llama al edit del api
-                var clienteEdit={
-                    id_Cliente: $('#id_Cliente').val(), 
-                    nombreCompleto: $('#nombreCompleto').val(),
-                    cedula: $('#cedula').val(),
-                    email: $('#email').val(),
-                    fecha_Nacimiento: $('#fecha_Nacimiento').val(),
-                    sexo: $('#sexo').val(),
-                    celular: $('#celular').val(),
-                    telefono: $('#telefono').val()
+            ){
+                alert("Algunos campos estan vacios");
+            }else{
+                if($('#id_Cliente').val() === ''){ //si el input escondido de id esta vacio
+
+                    var cliente={
+                        id_Cliente: $('#id_Cliente').val(),
+                        nombreCompleto: $('#nombreCompleto').val(),
+                        cedula: $('#cedula').val(),
+                        email: $('#email').val(),
+                        fecha_Nacimiento: $('#fecha_Nacimiento').val(),
+                        sexo: $('#sexo').val(),
+                        celular: $('#celular').val(),
+                        telefono: $('#telefono').val()
+                    }
+                    var ubicacion={
+                        calle: $('#calle').val(),
+                        casa: $('#casa').val(),
+                    };
+
+                    var data={
+                        cliente:cliente,
+                        ubicacion:ubicacion,
+                        nombreSector:$('#sector').val()
+                    };
+                    app.save( //funcion que llama al save del api
+                        data
+                    );
+                }else{ //funcion que llama al edit del api
+                    var clienteEdit={
+                        id_Cliente: $('#id_Cliente').val(),
+                        nombreCompleto: $('#nombreCompleto').val(),
+                        cedula: $('#cedula').val(),
+                        email: $('#email').val(),
+                        fecha_Nacimiento: $('#fecha_Nacimiento').val(),
+                        sexo: $('#sexo').val(),
+                        celular: $('#celular').val(),
+                        telefono: $('#telefono').val()
+                    }
+                    var ubicacionEdit={
+                        id_Ubicacion: $('#id_Ubicacion').val(),
+                        calle: $('#calle').val(),
+                        casa: $('#casa').val()
+                    }
+                    var dataEdit={
+                        cliente: clienteEdit,
+                        ubicacion: ubicacionEdit,
+                        nombreSector: $('#sector').val()
+                    };
+                    app.edit(
+                        dataEdit
+                    );
                 }
-                var ubicacionEdit={
-                    id_Ubicacion: $('#id_Ubicacion').val(),
-                    calle: $('#calle').val(),
-                    casa: $('#casa').val()
-                }
-                var dataEdit={
-                    cliente: clienteEdit,
-                    ubicacion: ubicacionEdit,
-                    nombreSector: $('#sector').val()
-                };
-                app.edit(
-                    dataEdit
-                );
             }
+
         });
     },
     initDataTable : function(id){ //funcion que llena la tabla de data con el get del api

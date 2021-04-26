@@ -73,76 +73,89 @@ var app = {
         });
 
         $("#save").click(function(){ //click en el boton de guardar en el modal
-            if($('#id_Vehiculo').val() === ''){ //si el input escondido de id esta vacio
+            if( $('#marca').val() === "" || $("#modelo").val() === '' ||  $("#version").val() === '' ||
+                $("#tipo").val() === '' || $('#year').val()  === '' || $("#condicion").val() === '' ||
+                $("#estado").val() === '' ||  $("#kilometraje").val() === '' ||  $("#puertas").val() === '' ||
+                $("#colorExt").val() === '' ||  $("#colorInt").val() === '' ||  $("#pasajeros").val() ==='' ||
+                $("#transmision").val() === '' ||  $("#combustible").val() === '' ||  $("#traccion").val() === '' ||
+                $("#motor").val() === '' ||  $("#accesorios").val() === '' ||  $("#descripcion").val() === '' ||
+                $("#precio").val() === ''
 
-                var vehiculo={
-                id_Vehiculo: $('#id_Vehiculo').val(), 
-                kilometraje: $('#kilometraje').val(),
-                accesorios: $('#accesorios').val(),
-                ano: $('#year').val(),
-                condicion: $('#condicion').val(),
-                color_Exterior: $('#colorExt').val(),
-                color_Interior: $('#colorInt').val(),
-                precio: $('#precio').val(),
-                estado: $('#estado').val(),
-                tipo: $('#tipo').val(),
-                descripcion: $('#descripcion').val()
+            ){
+                alert("Algunos campos estan vacios");
+            }else{
+                if($('#id_Vehiculo').val() === ''){ //si el input escondido de id esta vacio
+
+                    var vehiculo={
+                        id_Vehiculo: $('#id_Vehiculo').val(),
+                        kilometraje: $('#kilometraje').val(),
+                        accesorios: $('#accesorios').val(),
+                        ano: $('#year').val(),
+                        condicion: $('#condicion').val(),
+                        color_Exterior: $('#colorExt').val(),
+                        color_Interior: $('#colorInt').val(),
+                        precio: $('#precio').val(),
+                        estado: $('#estado').val(),
+                        tipo: $('#tipo').val(),
+                        descripcion: $('#descripcion').val()
+                    }
+
+                    var version={
+                        //id_Version: $('#id_Version'),
+                        nombreVersion: $('#version').val(),
+                        puertas: $('#puertas').val(),
+                        pasajeros: $('#pasajeros').val(),
+                        motor: $('#motor').val(),
+                        combustible: $('#combustible').val(),
+                        transmision: $('#transmision').val(),
+                        traccion: $('#traccion').val()
+                    };
+
+                    var data={
+                        vehiculo:vehiculo,
+                        version:version,
+                        //nombreModelo:$('#modelo').val(),
+                        //file: $('#customFile').val()  //revisar
+                    };
+                    app.save( //funcion que llama al save del api
+                        data
+                    );
+                }else{ //funcion que llama al edit del api
+                    var vehiculoEdit={
+                        id_Vehiculo: $('#id_Vehiculo').val(),
+                        kilometraje: $('#kilometraje').val(),
+                        accesorios: $('#accesorios').val(),
+                        ano: $('#year').val(),
+                        condicion: $('#condicion').val(),
+                        color_Exterior: $('#colorExt').val(),
+                        color_Interior: $('#colorInt').val(),
+                        precio: $('#precio').val(),
+                        estado: $('#estado').val(),
+                        tipo: $('#tipo').val(),
+                        descripcion: $('#descripcion').val()
+                    }
+                    var versionEdit={
+                        id_Version: $('#id_Version'),
+                        nombreVersion: $('#version').val(),
+                        puertas: $('#puertas').val(),
+                        pasajeros: $('#pasajeros').val(),
+                        motor: $('#motor').val(),
+                        combustible: $('#combustible').val(),
+                        transmision: $('#transmision').val(),
+                        traccion: $('#traccion').val()
+                    }
+                    var dataEdit={
+                        vehiculo: vehiculoEdit,
+                        version: versionEdit,
+                        //nombreModelo: $('#modelo').val(),
+                        //file: $('#customFile').val()
+                    };
+                    app.edit(
+                        dataEdit
+                    );
                 }
-
-                var version={
-                //id_Version: $('#id_Version'),
-                nombreVersion: $('#version').val(),
-                puertas: $('#puertas').val(),
-                pasajeros: $('#pasajeros').val(),
-                motor: $('#motor').val(),
-                combustible: $('#combustible').val(),
-                transmision: $('#transmision').val(),
-                traccion: $('#traccion').val()
-                };
-
-                var data={
-                    vehiculo:vehiculo,
-                    version:version,
-                    //nombreModelo:$('#modelo').val(),
-                    //file: $('#customFile').val()  //revisar
-                };
-                app.save( //funcion que llama al save del api
-                    data
-                );
-            }else{ //funcion que llama al edit del api
-               var vehiculoEdit={
-                id_Vehiculo: $('#id_Vehiculo').val(), 
-                kilometraje: $('#kilometraje').val(),
-                accesorios: $('#accesorios').val(),
-                ano: $('#year').val(),
-                condicion: $('#condicion').val(),
-                color_Exterior: $('#colorExt').val(),
-                color_Interior: $('#colorInt').val(),
-                precio: $('#precio').val(),
-                estado: $('#estado').val(),
-                tipo: $('#tipo').val(),
-                descripcion: $('#descripcion').val()
-               }
-               var versionEdit={
-                id_Version: $('#id_Version'),
-                nombreVersion: $('#version').val(),
-                puertas: $('#puertas').val(),
-                pasajeros: $('#pasajeros').val(),
-                motor: $('#motor').val(),
-                combustible: $('#combustible').val(),
-                transmision: $('#transmision').val(),
-                traccion: $('#traccion').val()
-               }
-               var dataEdit={
-                   vehiculo: vehiculoEdit,
-                   version: versionEdit,
-                   //nombreModelo: $('#modelo').val(),
-                   //file: $('#customFile').val()
-               };
-               app.edit(
-                   dataEdit
-               );
             }
+
         });
     },
     initDataTable : function(id){ //funcion que llena la tabla de data con el get del api
@@ -204,19 +217,17 @@ var app = {
     },
     setDataToModal : function(data){
         console.log(data);
-        $('#id_Vehiculo').val(data);
+        $('#id_Vehiculo').val(data.id_Vehiculo);
         $('#kilometraje').val(data.kilometraje);
         $('#accesorios').val(data.accesorios);
         $('#condicion').val(data.condicion);
         $('#estado').val(data.estado);
         $('#year').val(data.ano);
-        $('#colorExt').val(data);
-        $('#colorInt').val(data);
         $('#precio').val(data.precio);
         $('#colorExt').val(data.color_Exterior);
         $('#colorInt').val(data.color_Interior);
         $('#descripcion').val(data.descripcion);
-        $('#id_Version').val();
+        $('#id_Version').val(data.versionVehiculo.id_Version);
         
         $('#puertas').val(data.versionVehiculo.puertas);
         $('#pasajeros').val(data.versionVehiculo.pasajeros);
@@ -249,10 +260,9 @@ var app = {
         $('#combustible').val('');
         $('#transmision').val('');
         $('#traccion').val('');
-        //$('#marca').empty();
+        $('#marca').empty();
         $('#modelo').empty();
         $('#version').empty();
-        //$('#modelo').empty();
 
         $.ajax({
             url: app.backend + '/marcas/',
