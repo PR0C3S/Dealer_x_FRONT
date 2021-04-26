@@ -128,46 +128,18 @@
                                     </div>
 
                                     <div class="card-block">
-
-                                        <table class="table table-hover">
+                                        <table id="tablaFactura" class="table table-hover">
                                             <thead>
                                             <tr>
-                                                <th>#ID</th>
+                                                <th>#ID_Factura</th>
                                                 <th>ID_Contrato</th>
                                                 <th>Fecha</th>
+                                                <th>Cliente</th>
                                                 <th>Pagado por</th>
                                                 <th>Monto</th>
-                                                
                                             </tr>
                                             </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>2</td>
-                                                <td>27/01/2020</td>
-                                                <td>Carlos Perez</td>
-                                                <td>120,000</td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>2</td>
-                                                <td>27/06/2020</td>
-                                                <td>Carlos Perez</td>
-                                                <td>120,000</td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>2</td>
-                                                <td>27/09/2020</td>
-                                                <td>Carlos Perez</td>
-                                                <td>120,000</td>
-
-
-                                            </tr>
-
-                                            </tbody>
 
                                         </table>
 
@@ -183,35 +155,54 @@
                                                     <div class="modal-content">
 
                                                         <div class="card-header">
+                                                            <h5>Buscar contrato</h5>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-4">
+
+                                                                    <label for="id_Factura"></label>
+                                                                    <input type="hidden" class="form-control" id="id_Factura" placeholder="ID">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label class="form-label">ID Contrato</label>
+                                                                    <input type="text" class="form-control"  id="id_Contrato"placeholder="ID CONTRATO">
+                                                                </div>
+                                                            </div>
+                                                            <button type="button" id="buscar" class="btn btn-primary">Buscar</button>
+
+                                                        </div>
+                                                        <div class="card-header">
                                                             <h5>Datos generales</h5>
                                                         </div>
                                                         <div class="card-body">
 
                                                             <div class="form-row">
-                                                                <div class="form-group col-md-12">
-                                                                    <label class="form-label">ID Contrato</label>
-                                                                    <input type="text" class="form-control"  id="contrato"placeholder="ID CONTRATO">
+                                                                <div class="form-group col-md-6">
+                                                                    <label class="form-label">Vehiculo</label>
+                                                                    <input type="text" class="form-control"  id="vehiculo" placeholder="Vehiculo del cliente">
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
-                                                                <div class="form-group col-md-12">
+                                                                <div class="form-group col-md-6">
                                                                     <label class="form-label">Cliente</label>
-                                                                    <input type="text" class="form-control"  id="cliente "placeholder="Nombre del cliente">
+                                                                    <input type="text" class="form-control"  id="cliente" placeholder="Nombre del cliente">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label class="form-label">Deuda</label>
+                                                                    <input type="text" class="form-control"  id="deuda" placeholder="deuda a pagar">
                                                                 </div>
                                                             </div>
 
                                                             <div class="form-row">
-                                                                <div class="form-group col-md-12">
+                                                                <div class="form-group col-md-6">
                                                                     <label class="form-label">Pagado por</label>
-                                                                    <input type="text" class="form-control"  id="pagadopor "placeholder="Nombre de quien realizo el pago">
+                                                                    <input type="text" class="form-control"  id="pagadopor" placeholder="Nombre de quien realizo el pago">
                                                                 </div>
-                                                            </div>
-
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-12">
+                                                                <div class="form-group col-md-6">
                                                                     <label class="form-label">Monto</label>
-                                                                    <input type="text" class="form-control"  id="Monto "placeholder="Monto a pagar">
+                                                                    <input type="text" class="form-control"  id="Monto" placeholder="Monto a pagar">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -291,7 +282,12 @@
     <!-- Warning Section Ends -->
 
     <!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
-	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/pcoded.min.js"></script>
+                <script src="assets/js/vendor-all.min.js"></script>
+                <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+                <script src="assets/js/pcoded.min.js"></script>
+                <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+                <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+                <script src="assets/js/facturas.js"></script>
+
 
