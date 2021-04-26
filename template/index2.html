@@ -40,15 +40,15 @@
                                     </a>
                                 </div><!-- LOGO -->
                                 <form>
-                                    <h1>INICIAR SECCION</h1>
+                                    <h1>INICIAR SESION</h1>
                                     <div class="field">
-                                        <input type="text" placeholder="USUARIO" />
+                                        <input type="text" id="correo" placeholder="CORREO" />
                                     </div>
                                     <div class="field">
-                                        <input type="password" placeholder="CONTRASEÑA" />
+                                        <input type="password" id="password" placeholder="CONTRASEÑA" />
                                     </div>
                                     <div class="field">
-                                        <input type="submit" value="SEND NOW" class="flat-btn" />
+                                        <input type="submit" id= "submit" value="Aceptar" class="flat-btn" />
                                     </div>
                                 </form>
                             </div>
@@ -70,8 +70,8 @@
                             <strong>Venta de vehiculos</strong>
                         </a>
                     </div><!-- LOGO -->
-                    <div class="popup-client">
-                        <span><i class="fa fa-user"></i> /  INICIAR SECCION</span>
+                    <div class="popup-client" id = "iniciarbtn">
+                        <span><i class="fa fa-user"></i>   INICIAR SESION</span>
                     </div>
                     <span class="menu-toggle"><i class="fa fa-bars"></i></span>
                     <nav>
@@ -291,10 +291,9 @@
                                         <img src="img/demo/vehiculo.png" alt="" /> 
                                         <span id="condicion0" class="spn-status"> Damaged</span>                                       
 
-                                        <a class="proeprty-sh-more" href="vehicul.html"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
-
+                                        <a class="proeprty-sh-more" onclick="change_event();" href="#"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
                                     </div>
-                                    <h3><a id="nombre0" href="vehicul.html" title="">No Disponible</a></h3>
+                                    <h3><a class="nombre" id="nombre0" onclick="change_event();" href="#" title="">No Disponible</a></h3>
                                     <span id="price0" class="price">$340000</span>
                                     <p id="id0" hidden></p>
                                 </div> 
@@ -303,10 +302,10 @@
                                         <img src="img/demo/vehiculo.png" alt="" /> 
                                         <span id="condicion1" class="spn-status"> Semi-New </span>
    
-                                        <a class="proeprty-sh-more" href="vehicul.html"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
+                                        <a class="proeprty-sh-more" onclick="change_event();" href="#"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
 
                                     </div>
-                                    <h3><a id="nombre1" href="#" title="New York Villa">Mercedes-Benz</a></h3>
+                                    <h3><a class="nombre" id="nombre1" onclick="change_event();" href="#" title="New York Villa">Mercedes-Benz</a></h3>
                                     <span id="price1" class="price">$3400000</span>
                                     <p id="id1" hidden></p>
                                 </div> 
@@ -316,10 +315,10 @@
                                         <span id="condicion2" class="spn-status"> Semi-New</span>
 
 
-                                        <a class="proeprty-sh-more" href="vehicul.html"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
+                                        <a class="proeprty-sh-more" onclick="change_event();" href="#"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
 
                                     </div>
-                                    <h3><a id="nombre2" href="vehicul.html" title="">Mercedes-Benz</a></h3>
+                                    <h3><a class="nombre" id="nombre2" onclick="change_event();" href="#" title="">Mercedes-Benz</a></h3>
                                     <span id="price2" class="price">$300000</span>
                                     <p id="id2" hidden></p>
                                 </div> 
@@ -328,10 +327,10 @@
                                         <img src="img/demo/vehiculo.png" alt="" /> 
                                         <span id="condicion3" class="spn-status"> Damaged </span>
 
-                                        <a class="proeprty-sh-more" href="vehicul.html"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
+                                        <a class="proeprty-sh-more" onclick="change_event();" href="#"><i class="fa fa-angle-double-right"> </i><i class="fa fa-angle-double-right"> </i></a>
 
                                     </div>
-                                    <h3><a id="nombre3" href="vehicul.html" title="">Mercedes-Benz</a></h3>
+                                    <h3><a class="nombre" id="nombre3" onclick="change_event();" href="#" title="">Mercedes-Benz</a></h3>
                                     <span id="price3" class="price">$34.00</span>
                                     <p id="id3" hidden></p>
                                 </div> 
@@ -412,7 +411,9 @@
     <script src="js/rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
     <script src="js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 
-    <script src="assets/js/index.js"></script>
+    
+    <script type="text/javascript" src="assets/js/Login.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -538,7 +539,24 @@
                 }
             });
 
+            
+
+            
         });
+
+        function change_event(){
+            /* $('.proeprty-sh-more').click(function(){
+            console.log($(this).parent().siblings('p').text());
+            window.location.href = "vehicul.html?idVehiculo=" + $(this).parent().siblings('p').text();
+            //localStorage.setItem("idVehiculo", "abc123");
+        });
+
+        $('.nombre').click(function(){
+            console.log($(this).parent().siblings('p').text());
+            window.location.href = "vehicul.html?idVehiculo=" + $(this).parent().siblings('p').text();
+            //localStorage.setItem("idVehiculo", "abc123");
+        }); */
+        };
     </script>
 </body>
 </html>

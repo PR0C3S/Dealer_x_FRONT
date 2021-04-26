@@ -1,7 +1,7 @@
 var app = {
 
-    password: document.getElementById("password"),
-    confirm_password: document.getElementById("confirm_password"),
+    //password: document.getElementById("password"),
+    //confirm_password: document.getElementById("confirm_password"),
     backend: 'http://localhost:8080',
     table: null,
     init: function(){
@@ -68,71 +68,65 @@ var app = {
 
         $("#save").click(function(){ //click en el boton de guardar en el modal
 
-            if(password.value != confirm_password.value) {
-                confirm_password.setCustomValidity("Passwords Don't Match");
-            } else {
-                confirm_password.setCustomValidity('');
+            if($('#id_Empleado').val() === ''){ //si el input escondido de id esta vacio
+                var empleado={
+                    id_Empleado: $('#id_Empleado').val(),
+                    nombreCompleto: $('#nombreCompleto').val(),
+                    password: $('#password').val(),
+                    cedula: $('#cedula').val(),
 
-                if($('#id_Empleado').val() === ''){ //si el input escondido de id esta vacio
+                    tipo: $('#tipo').val(),
+                    estado: $('#estado').val(),
 
-                    var empleado={
-                        id_Empleado: $('#id_Empleado').val(),
-                        nombreCompleto: $('#nombreCompleto').val(),
-                        password: $('#password').val(),
-                        cedula: $('#cedula').val(),
-
-                        tipo: $('#tipo').val(),
-                        estado: $('#estado').val(),
-
-                        email: $('#email').val(),
-                        sexo: $('#sexo').val(),
-                        celular: $('#celular').val(),
-                        telefono: $('#telefono').val()
-                    }
-                    var ubicacion={
-                        calle: $('#calle').val(),
-                        casa: $('#casa').val(),
-                    };
-
-                    var data={
-                        empleado:empleado,
-                        ubicacion:ubicacion,
-                        nombreSector:$('#sector').val()
-                    };
-                    app.save( //funcion que llama al save del api
-                        data
-                    );
-                }else{ //funcion que llama al edit del api
-                    var empleadoEdit={
-                        id_Empleado: $('#id_Empleado').val(),
-                        nombreCompleto: $('#nombreCompleto').val(),
-                        cedula: $('#cedula').val(),
-                        email: $('#email').val(),
-                        password: $('#password').val(),
-                        sexo: $('#sexo').val(),
-                        celular: $('#celular').val(),
-                        telefono: $('#telefono').val(),
-                        tipo: $('#tipo').val(),
-                        estado: $('#estado').val()
-                    }
-                    var ubicacionEdit={
-                        id_Ubicacion: $('#id_Ubicacion').val(),
-                        calle: $('#calle').val(),
-                        casa: $('#casa').val()
-                    }
-                    var dataEdit={
-                        cliente: clienteEdit,
-                        ubicacion: ubicacionEdit,
-                        nombreSector: $('#sector').val()
-                    };
-                    app.edit(
-                        dataEdit
-                    );
+                    email: $('#email').val(),
+                    sexo: $('#sexo').val(),
+                    celular: $('#celular').val(),
+                    telefono: $('#telefono').val()
                 }
-            }
+                var ubicacion={
+                    calle: $('#calle').val(),
+                    casa: $('#casa').val(),
+                };
 
-            password.onchange = validatePassword;
-            confirm_password.onkeyup = validatePassword;
+                var data={
+                    empleado:empleado,
+                    ubicacion:ubicacion,
+                    nombreSector:$('#sector').val()
+                };
+                app.save( //funcion que llama al save del api
+                    data
+                );
+            }else{ //funcion que llama al edit del api
+                var empleadoEdit={
+                    id_Empleado: $('#id_Empleado').val(),
+                    nombreCompleto: $('#nombreCompleto').val(),
+                    cedula: $('#cedula').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val(),
+                    sexo: $('#sexo').val(),
+                    celular: $('#celular').val(),
+                    telefono: $('#telefono').val(),
+                    tipo: $('#tipo').val(),
+                    estado: $('#estado').val()
+                }
+                var ubicacionEdit={
+                    id_Ubicacion: $('#id_Ubicacion').val(),
+                    calle: $('#calle').val(),
+                    casa: $('#casa').val()
+                }
+                var dataEdit={
+                    empleado: empleadoEdit,
+                    ubicacion: ubicacionEdit,
+                    nombreSector: $('#sector').val()
+                };
+                app.edit(
+                    dataEdit
+                );
+            }
+            
+
+            //password.onchange = validatePassword;
+            //confirm_password.onkeyup = validatePassword;
 
 
         });
@@ -140,7 +134,7 @@ var app = {
     initDataTable : function(id){ //funcion que llena la tabla de data con el get del api
         app.table = $(id).DataTable({
             ajax : {
-                url : app.backend + '/clientes/',
+                url : app.backend + '/empleados/',
                 dataSrc : function(json){
                     return json;
                 }
@@ -230,8 +224,6 @@ var app = {
         $('#casa').val('');
         $('#provincia').empty();
         $('#municipio').empty();
-        $('#tipo').empty(),
-        $('#estado').empty(),
         $('#sector').empty();
     },
 
@@ -291,6 +283,18 @@ var app = {
                 $('#msg').show();
             }
         })
+    },
+
+    validate: function validatePassword(){
+        if(password.value != confirm_password.value) {
+            return false;
+          confirm_password.setCustomValidity("Passwords Don't Match");
+          
+        } else {
+            return true;
+            confirm_password.setCustomValidity('');
+
+        }
     }
 };
 
