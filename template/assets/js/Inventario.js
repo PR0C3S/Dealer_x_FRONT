@@ -13,7 +13,6 @@ var app = {
             //$('#tipo').empty();
             $('#version').empty();
             var nombreMarca = $('#marca').val();
-            console.log(nombreMarca);
 
             $.ajax({
                 url: app.backend + '/modelos/marca/?marca=' + nombreMarca,
@@ -61,7 +60,6 @@ var app = {
                     alert("Error en la peticion");
                 },
                 success: function(data){
-                    console.log(data);
                     $('#puertas').val(data.puertas);
                     $('#pasajeros').val(data.pasajeros);
                     $('#motor').val(data.motor);
@@ -105,8 +103,8 @@ var app = {
                 var data={
                     vehiculo:vehiculo,
                     version:version,
-                    nombreModelo:$('#modelo').val(),
-                    file: $('#customFile').val()  //revisar
+                    //nombreModelo:$('#modelo').val(),
+                    //file: $('#customFile').val()  //revisar
                 };
                 app.save( //funcion que llama al save del api
                     data
@@ -138,8 +136,8 @@ var app = {
                var dataEdit={
                    vehiculo: vehiculoEdit,
                    version: versionEdit,
-                   nombreModelo: $('#modelo').val(),
-                   file: $('#customFile').val()
+                   //nombreModelo: $('#modelo').val(),
+                   //file: $('#customFile').val()
                };
                app.edit(
                    dataEdit
@@ -205,26 +203,31 @@ var app = {
         });
     },
     setDataToModal : function(data){
+        console.log(data);
         $('#id_Vehiculo').val(data);
-        $('#kilometraje').val(data);
-        $('#accesorios').val(data);
-        $('#year').val(data);
-        $('#condicion').val(data);
+        $('#kilometraje').val(data.kilometraje);
+        $('#accesorios').val(data.accesorios);
+        $('#condicion').val(data.condicion);
+        $('#estado').val(data.estado);
+        $('#year').val(data.ano);
         $('#colorExt').val(data);
         $('#colorInt').val(data);
-        $('#precio').val(data);
-        $('#telefono').val(data);
-        $('#estado').val(data);
-        $('#descripcion').val(data);
+        $('#precio').val(data.precio);
+        $('#colorExt').val(data.color_Exterior);
+        $('#colorInt').val(data.color_Interior);
+        $('#descripcion').val(data.descripcion);
         $('#id_Version').val();
-        //$('#version').val();
-        $('#puertas').val();
-        $('#pasajeros').val();
-        $('#motor').val();
-        $('#combustible').val();
-        $('#transmision').val();
-        $('#traccion').val();
-        //$('#modelo').val();
+        
+        $('#puertas').val(data.versionVehiculo.puertas);
+        $('#pasajeros').val(data.versionVehiculo.pasajeros);
+        $('#motor').val(data.versionVehiculo.motor);
+        $('#combustible').val(data.versionVehiculo.combustible);
+        $('#transmision').val(data.versionVehiculo.transmision);
+        $('#traccion').val(data.versionVehiculo.traccion);
+        
+        $('#marca').val(data.versionVehiculo.modeloVehiculo.marcaVehiculo.nombreMarca);
+        $('#modelo').val(data.versionVehiculo.modeloVehiculo.nombreModelo);
+        $('#version').val(data.versionVehiculo.nombreVersion);
     },
 
     cleanForm: function(){
@@ -269,10 +272,10 @@ var app = {
     },
 
     save : function(data){ //api call save
-        console.log(data.file);
+        console.log(data);
         $.ajax({
             url: app.backend + '/vehiculos/save',
-            data : JSON.stringify({vehiculo: data.vehiculo, version: data.version, modelo: data.nombreModelo, file:data.file}),
+            data : JSON.stringify({vehiculo: data.vehiculo, version: data.version}),  //, modelo: data.nombreModelo, file:data.file
             method: 'POST',
             dataType : 'json',
             contentType: 'application/json; charset=utf-8',
@@ -310,7 +313,7 @@ var app = {
 
         $.ajax({
             url: app.backend + '/vehiculos/edit' /* + '?ID=' + id */,
-            data : JSON.stringify({vehiculo:data.vehiculo, version: data.version, modelo: data.nombreModelo, file:data.file}),
+            data : JSON.stringify({vehiculo:data.vehiculo, version: data.version}), //, modelo: data.nombreModelo, file:data.file
             method: 'PUT',
             dataType : 'json',
             contentType: 'application/json; charset=utf-8',
