@@ -4,5 +4,4 @@ Car dealership front-end site and adming panel built with plain old HTML, vanill
 
 ![image](https://user-images.githubusercontent.com/57234183/235740066-41495804-5b18-4aa6-ac20-3af78a6a4ffa.png)
 
-Functioning admin panel:
 ![image](https://user-images.githubusercontent.com/57234183/235740985-c4a7ec4e-f749-44c7-8b7d-b48f6fdfad76.png)
