@@ -1,4 +1,4 @@
-Car dealership front-end site and adming panel built with plain old HTML, vanilla javascripts (with JQuery) and CSS(Bootstrap)
+Car dealership front-end site and admin panel built with plain old HTML, vanilla javascripts (with JQuery) and CSS(Bootstrap)
 
 ![image](https://user-images.githubusercontent.com/57234183/235739681-1b0f3d99-8aa3-4ce4-9170-8285020de538.png)
 
